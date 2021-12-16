@@ -1,0 +1,582 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "Doctor App API",
+    "description" : "This is a simple API",
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version" : "2.0.0"
+  },
+  "servers" : [ {
+    "url" : "https://virtserver.swaggerhub.com/drapp/doctorApp/2.0.0",
+    "description" : "SwaggerHub API Auto Mocking"
+  } ],
+  "tags" : [ {
+    "name" : "doctorInfo",
+    "description" : "ข้อมูลแพทย์"
+  }, {
+    "name" : "onboard",
+    "description" : "สมัครสมาชิก"
+  } ],
+  "paths" : {
+    "/inquiry-doctor-info" : {
+      "post" : {
+        "tags" : [ "doctorInfo" ],
+        "summary" : "inquiry doctor info",
+        "description" : "inquiry doctor info",
+        "parameters" : [ {
+          "name" : "api-key",
+          "in" : "header",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string",
+            "example" : "xxxxxxxxxxxxx"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/inquiry-body"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inquiry-response"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          },
+          "409" : {
+            "description" : "an existing item already exists"
+          }
+        }
+      }
+    },
+    "/inquiry-mdcard" : {
+      "post" : {
+        "tags" : [ "doctorInfo" ],
+        "summary" : "inquiry md card info",
+        "description" : "inquiry md card info",
+        "parameters" : [ {
+          "name" : "api-key",
+          "in" : "header",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string",
+            "example" : "xxxxxxxxxxxx"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/inquiry-body"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inquiry-mdcard-response"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          },
+          "409" : {
+            "description" : "an existing item already exists"
+          }
+        }
+      }
+    },
+    "/update-doctor-info" : {
+      "post" : {
+        "tags" : [ "doctorInfo" ],
+        "summary" : "update doctor info",
+        "description" : "update doctor info",
+        "parameters" : [ {
+          "name" : "api-key",
+          "in" : "header",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string",
+            "example" : "xxxxxxxxxxxx"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/update-body"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "201" : {
+            "description" : "success"
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          },
+          "404" : {
+            "description" : "doctorId not found"
+          }
+        }
+      }
+    },
+    "/get-tmc-url" : {
+      "get" : {
+        "tags" : [ "onboard" ],
+        "summary" : "get url tmc webview",
+        "description" : "get url tmc webview",
+        "parameters" : [ {
+          "name" : "api-key",
+          "in" : "header",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string",
+            "example" : "xxxxxxxxxxxx"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/get-tmc-response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/available-menu-list" : {
+      "get" : {
+        "tags" : [ "onboard" ],
+        "summary" : "inquiry doctor info",
+        "description" : "inquiry doctor info",
+        "parameters" : [ {
+          "name" : "api-key",
+          "in" : "header",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string",
+            "example" : "xxxxxxxxxxxx"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/available-menu-response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/campaign-doctor-list" : {
+      "get" : {
+        "tags" : [ "onboard" ],
+        "summary" : "campaign doctor list",
+        "description" : "campaign doctor list",
+        "parameters" : [ {
+          "name" : "api-key",
+          "in" : "header",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string",
+            "example" : "xxxxxxxxxxxx"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/campaign-doctor-response"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "inquiry-body" : {
+        "required" : [ "doctorId" ],
+        "type" : "object",
+        "properties" : {
+          "doctorId" : {
+            "type" : "string",
+            "description" : "เลขใบประกอบวิชาชีพเวชกรรม (เลข ว.)",
+            "example" : "21412421"
+          }
+        }
+      },
+      "inquiry-response" : {
+        "type" : "object",
+        "properties" : {
+          "doctorId" : {
+            "type" : "string",
+            "description" : "เลขใบประกอบวิชาชีพเวชกรรม (เลข ว.)",
+            "example" : "21412421"
+          },
+          "cid" : {
+            "type" : "string",
+            "description" : "หมายเลขบัตรประชาชน",
+            "example" : "1823498394839"
+          },
+          "birthDate" : {
+            "type" : "string",
+            "description" : "วันเดือนปีเกิด",
+            "example" : "1995-03-11"
+          },
+          "sex" : {
+            "type" : "string",
+            "description" : "เพศ",
+            "example" : "male"
+          },
+          "title" : {
+            "type" : "string",
+            "description" : "คำนำหน้าชื่อ",
+            "example" : "นพ."
+          },
+          "firstName" : {
+            "type" : "string",
+            "description" : "ชื่อ",
+            "example" : "เด็กดี"
+          },
+          "lastName" : {
+            "type" : "string",
+            "description" : "นามสกุล",
+            "example" : "มีน้ำใจ"
+          },
+          "doctorImg" : {
+            "type" : "string",
+            "description" : "รูปโปรไฟล์แพทย์",
+            "example" : "https://www.engdict.com/vocab/?q=doctor"
+          },
+          "currentAddress" : {
+            "$ref" : "#/components/schemas/inquiryresponse_currentAddress"
+          },
+          "mobileNo" : {
+            "type" : "string",
+            "description" : "เบอร์โทรติดต่อ",
+            "example" : "912487392"
+          },
+          "mobileOtp" : {
+            "type" : "string",
+            "description" : "เบอร์โทรที่ใช้รับ OTP",
+            "example" : "912487392"
+          },
+          "email" : {
+            "type" : "string",
+            "description" : "อีเมล",
+            "example" : "test@email.com"
+          },
+          "officeAddress" : {
+            "$ref" : "#/components/schemas/inquiryresponse_officeAddress"
+          }
+        }
+      },
+      "update-body" : {
+        "required" : [ "doctorId" ],
+        "type" : "object",
+        "properties" : {
+          "doctorId" : {
+            "type" : "string",
+            "description" : "เลขใบประกอบวิชาชีพเวชกรรม (เลข ว.)",
+            "example" : "21412421"
+          },
+          "currentAddress" : {
+            "$ref" : "#/components/schemas/inquiryresponse_currentAddress"
+          },
+          "mobileNo" : {
+            "type" : "string",
+            "description" : "เบอร์โทรติดต่อ",
+            "example" : "912487392"
+          },
+          "mobileOtp" : {
+            "type" : "string",
+            "description" : "เบอร์โทรที่ใช้รับ OTP",
+            "example" : "912487392"
+          },
+          "email" : {
+            "type" : "string",
+            "description" : "อีเมล",
+            "example" : "test@email.com"
+          }
+        }
+      },
+      "get-tmc-response" : {
+        "required" : [ "doctorId" ],
+        "type" : "object",
+        "properties" : {
+          "url" : {
+            "type" : "string",
+            "example" : "https://tmc.or.th"
+          }
+        }
+      },
+      "available-menu-response" : {
+        "required" : [ "available" ],
+        "type" : "object",
+        "properties" : {
+          "available" : {
+            "type" : "array",
+            "example" : [ {
+              "methodName" : "mdCard",
+              "isEnable" : true
+            }, {
+              "methodName" : "scanHie",
+              "isEnable" : true
+            } ],
+            "items" : {
+              "$ref" : "#/components/schemas/availablemenuresponse_available"
+            }
+          }
+        }
+      },
+      "campaign-doctor-response" : {
+        "required" : [ "campaign" ],
+        "type" : "object",
+        "properties" : {
+          "campaign" : {
+            "type" : "array",
+            "example" : [ {
+              "url" : "https://www.checkraka.com/uploaded/article/news/1377030/aeon_promotion_top.png"
+            }, {
+              "url" : "https://hacktrue.com/wp-content/uploads/2019/08/TrueMoney-Upsize-Campaign_Banner_700x441-2100x1200.jpg"
+            } ],
+            "items" : {
+              "$ref" : "#/components/schemas/campaigndoctorresponse_campaign"
+            }
+          }
+        }
+      },
+      "inquiry-mdcard-response" : {
+        "required" : [ "campaign" ],
+        "type" : "object",
+        "properties" : {
+          "isActive" : {
+            "type" : "boolean",
+            "example" : true
+          },
+          "cid" : {
+            "type" : "string",
+            "example" : "17103024912492"
+          },
+          "doctorId" : {
+            "type" : "string",
+            "example" : "912421.0"
+          },
+          "birthDate" : {
+            "type" : "string",
+            "example" : "1992-03-11"
+          },
+          "userImageUrl" : {
+            "type" : "string",
+            "example" : "17103024912492"
+          },
+          "title" : {
+            "type" : "string",
+            "example" : "นพ."
+          },
+          "firstNameTh" : {
+            "type" : "string",
+            "example" : "17103024912492"
+          },
+          "lastNameTh" : {
+            "type" : "string",
+            "example" : "17103024912492"
+          },
+          "firstNameEn" : {
+            "type" : "string",
+            "example" : "17103024912492"
+          },
+          "lastNameEn" : {
+            "type" : "string",
+            "example" : "17103024912492"
+          },
+          "address" : {
+            "type" : "string",
+            "example" : "สำนักงานเลขาธิการแพทยสภา อาคารมหิตลาธิเบศร ชั้น 12 เลขที่ 88/19 ซอยสาธารณสุข 8 กระทรวงสาธารณสุข ต.ตลาดขวัญ อ.เมือง จ.นนทบุรี 11000."
+          },
+          "qrCodeUrl" : {
+            "type" : "string",
+            "example" : ""
+          },
+          "licenseDate" : {
+            "type" : "string",
+            "example" : "2021-03-11"
+          },
+          "dateOfIssue" : {
+            "type" : "string",
+            "example" : "2021-03-11"
+          },
+          "dateOfExpiry" : {
+            "type" : "string",
+            "example" : "2025-03-11"
+          },
+          "nameOfMedicalCouncil" : {
+            "type" : "string",
+            "example" : ""
+          },
+          "mdCardNo" : {
+            "type" : "string",
+            "example" : "xxxxxxxxx"
+          },
+          "serialMdCard" : {
+            "type" : "string",
+            "example" : "xxxxxxx"
+          }
+        }
+      },
+      "inquiryresponse_currentAddress" : {
+        "type" : "object",
+        "properties" : {
+          "addressNo" : {
+            "type" : "string",
+            "description" : "บ้านเลขที่",
+            "example" : "12/2"
+          },
+          "moo" : {
+            "type" : "string",
+            "description" : "หมู่",
+            "example" : "1"
+          },
+          "soi" : {
+            "type" : "string",
+            "description" : "ซอย"
+          },
+          "road" : {
+            "type" : "string",
+            "description" : "ถนน"
+          },
+          "subDistrict" : {
+            "type" : "string",
+            "description" : "ตำบล",
+            "example" : "เมือง"
+          },
+          "district" : {
+            "type" : "string",
+            "description" : "อำเภอ",
+            "example" : "เมือง"
+          },
+          "province" : {
+            "type" : "string",
+            "description" : "จังหวัด",
+            "example" : "นครปฐม"
+          },
+          "postCode" : {
+            "type" : "string",
+            "description" : "รหัสไปรษณีย์",
+            "example" : "73000"
+          }
+        },
+        "description" : "ข้อมูลที่อยู่ที่ใช้ในการติดต่อ"
+      },
+      "inquiryresponse_officeAddress" : {
+        "type" : "object",
+        "properties" : {
+          "addressNo" : {
+            "type" : "string",
+            "description" : "บ้านเลขที่",
+            "example" : "12/2"
+          },
+          "moo" : {
+            "type" : "string",
+            "description" : "หมู่",
+            "example" : "1"
+          },
+          "soi" : {
+            "type" : "string",
+            "description" : "ซอย"
+          },
+          "road" : {
+            "type" : "string",
+            "description" : "ถนน"
+          },
+          "subDistrict" : {
+            "type" : "string",
+            "description" : "ตำบล",
+            "example" : "เมือง"
+          },
+          "district" : {
+            "type" : "string",
+            "description" : "อำเภอ",
+            "example" : "เมือง"
+          },
+          "province" : {
+            "type" : "string",
+            "description" : "จังหวัด",
+            "example" : "นครปฐม"
+          },
+          "postCode" : {
+            "type" : "string",
+            "description" : "รหัสไปรษณีย์",
+            "example" : "73000"
+          }
+        },
+        "description" : "ที่อยู่ที่ทำงาน"
+      },
+      "availablemenuresponse_available" : {
+        "properties" : {
+          "methodName" : {
+            "type" : "boolean"
+          },
+          "isEnable" : {
+            "type" : "boolean"
+          }
+        }
+      },
+      "campaigndoctorresponse_campaign" : {
+        "properties" : {
+          "url" : {
+            "type" : "string"
+          }
+        }
+      }
+    }
+  }
+}
