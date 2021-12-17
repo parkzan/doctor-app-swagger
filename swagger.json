@@ -256,11 +256,7 @@
           "content" : {
             "application/json" : {
               "schema" : {
-                "oneOf" : [ {
-                  "$ref" : "#/components/schemas/campaign-doctor-body"
-                }, {
-                  "$ref" : "#/components/schemas/campaign-doctor-body"
-                } ]
+                "$ref" : "#/components/schemas/campaign-doctor-body"
               }
             }
           }
@@ -463,9 +459,54 @@
         "type" : "object",
         "required" : [ "doctorId" ],
         "properties" : {
-          "url" : {
-            "type" : "string",
-            "example" : "https://tmc.or.th"
+          "headerResp" : {
+            "type" : "object",
+            "properties" : {
+              "reqID" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqDtm" : {
+                "type" : "string",
+                "example" : null
+              },
+              "service" : {
+                "type" : "string",
+                "example" : null
+              },
+              "statusCd" : {
+                "type" : "string",
+                "example" : null
+              },
+              "statusDesc" : {
+                "type" : "string",
+                "example" : null
+              },
+              "txnRefID" : {
+                "type" : "string",
+                "example" : null
+              },
+              "errorDisplay" : {
+                "type" : "object"
+              },
+              "appVersion" : {
+                "type" : "string",
+                "example" : null
+              },
+              "clientOS" : {
+                "type" : "string",
+                "example" : null
+              }
+            }
+          },
+          "body" : {
+            "type" : "object",
+            "properties" : {
+              "url" : {
+                "type" : "string",
+                "example" : "https://tmc.or.th"
+              }
+            }
           }
         }
       },
@@ -618,22 +659,67 @@
       "campaign-doctor-response" : {
         "type" : "object",
         "properties" : {
-          "campaign" : {
-            "type" : "array",
-            "items" : {
-              "properties" : {
-                "imageUrl" : {
-                  "type" : "string"
-                },
-                "redirectUrl" : {
-                  "type" : "string"
-                }
+          "headerResp" : {
+            "type" : "object",
+            "properties" : {
+              "reqID" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqDtm" : {
+                "type" : "string",
+                "example" : null
+              },
+              "service" : {
+                "type" : "string",
+                "example" : null
+              },
+              "statusCd" : {
+                "type" : "string",
+                "example" : null
+              },
+              "statusDesc" : {
+                "type" : "string",
+                "example" : null
+              },
+              "txnRefID" : {
+                "type" : "string",
+                "example" : null
+              },
+              "errorDisplay" : {
+                "type" : "object"
+              },
+              "appVersion" : {
+                "type" : "string",
+                "example" : null
+              },
+              "clientOS" : {
+                "type" : "string",
+                "example" : null
               }
-            },
-            "example" : [ {
-              "imageUrl" : "https://hacktrue.com/wp-content/uploads/2019/08/TrueMoney-Upsize-Campaign_Banner_700x441-2100x1200.jpg",
-              "redirectUrl" : "https://hacktrue.com/new/%E0%B8%82%E0%B9%88%E0%B8%B2%E0%B8%A7%E0%B8%97%E0%B8%A3%E0%B8%B9/4140"
-            } ]
+            }
+          },
+          "body" : {
+            "type" : "object",
+            "properties" : {
+              "campaign" : {
+                "type" : "array",
+                "items" : {
+                  "properties" : {
+                    "imageUrl" : {
+                      "type" : "string"
+                    },
+                    "redirectUrl" : {
+                      "type" : "string"
+                    }
+                  }
+                },
+                "example" : [ {
+                  "imageUrl" : "https://hacktrue.com/wp-content/uploads/2019/08/TrueMoney-Upsize-Campaign_Banner_700x441-2100x1200.jpg",
+                  "redirectUrl" : "https://hacktrue.com/new/%E0%B8%82%E0%B9%88%E0%B8%B2%E0%B8%A7%E0%B8%97%E0%B8%A3%E0%B8%B9/4140"
+                } ]
+              }
+            }
           }
         }
       },
