@@ -143,6 +143,49 @@
         }
       }
     },
+    "/create-credential" : {
+      "post" : {
+        "tags" : [ "onboard" ],
+        "summary" : "create-credential",
+        "description" : "create-credential",
+        "parameters" : [ {
+          "name" : "api-key",
+          "in" : "header",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "xxxxxxxxxxxx"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/create-credential-response"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          },
+          "404" : {
+            "description" : "doctorId not found"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/create-credential-body"
+              }
+            }
+          }
+        }
+      }
+    },
     "/get-tmc-url" : {
       "get" : {
         "tags" : [ "onboard" ],
@@ -221,49 +264,6 @@
                 "schema" : {
                   "$ref" : "#/components/schemas/campaign-doctor-response"
                 }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/create-credential" : {
-      "post" : {
-        "tags" : [ "onboard" ],
-        "summary" : "create-credential",
-        "description" : "create-credential",
-        "parameters" : [ {
-          "name" : "api-key",
-          "in" : "header",
-          "required" : true,
-          "schema" : {
-            "type" : "string",
-            "example" : "xxxxxxxxxxxx"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "success",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/create-credential-response"
-                }
-              }
-            }
-          },
-          "400" : {
-            "description" : "invalid input, object invalid"
-          },
-          "404" : {
-            "description" : "doctorId not found"
-          }
-        },
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/create-credential-body"
               }
             }
           }
