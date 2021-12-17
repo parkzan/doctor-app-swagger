@@ -498,7 +498,7 @@
               },
               "statusCd" : {
                 "type" : "string",
-                "example" : 0
+                "example" : "0000"
               },
               "statusDesc" : {
                 "type" : "string",
