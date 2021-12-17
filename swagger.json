@@ -226,6 +226,49 @@
           }
         }
       }
+    },
+    "/create-credential" : {
+      "post" : {
+        "tags" : [ "onboard" ],
+        "summary" : "create-credential",
+        "description" : "create-credential",
+        "parameters" : [ {
+          "name" : "api-key",
+          "in" : "header",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "xxxxxxxxxxxx"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/create-credential-response"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          },
+          "404" : {
+            "description" : "doctorId not found"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/create-credential-body"
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components" : {
@@ -463,15 +506,20 @@
             "type" : "array",
             "items" : {
               "properties" : {
-                "url" : {
+                "imageUrl" : {
+                  "type" : "string"
+                },
+                "redirectUrl" : {
                   "type" : "string"
                 }
               }
             },
             "example" : [ {
-              "url" : "https://www.checkraka.com/uploaded/article/news/1377030/aeon_promotion_top.png"
+              "imageUrl" : "https://www.checkraka.com/uploaded/article/news/1377030/aeon_promotion_top.png",
+              "redirectUrl" : "https://www.google.com/"
             }, {
-              "url" : "https://hacktrue.com/wp-content/uploads/2019/08/TrueMoney-Upsize-Campaign_Banner_700x441-2100x1200.jpg"
+              "imageUrl" : "https://hacktrue.com/wp-content/uploads/2019/08/TrueMoney-Upsize-Campaign_Banner_700x441-2100x1200.jpg",
+              "redirectUrl" : "https://www.google.com/"
             } ]
           }
         }
@@ -551,6 +599,74 @@
           "serialMdCard" : {
             "type" : "string",
             "example" : "xxxxxxx"
+          }
+        }
+      },
+      "create-credential-body" : {
+        "type" : "object",
+        "required" : [ "doctorId", "firstName", "lastName", "cid" ],
+        "properties" : {
+          "doctorId" : {
+            "type" : "string",
+            "example" : 9.2141242E7
+          },
+          "cid" : {
+            "type" : "string",
+            "example" : 1827392847382
+          },
+          "firstName" : {
+            "type" : "string",
+            "example" : "เด็กดี"
+          },
+          "lastName" : {
+            "type" : "string",
+            "example" : "เด็กดี"
+          }
+        }
+      },
+      "create-credential-response" : {
+        "type" : "object",
+        "required" : [ "cidIsMatch", "firstNameIsMatch", "lastNameIsMatch", "cid", "doctorId" ],
+        "properties" : {
+          "doctorId" : {
+            "type" : "string",
+            "example" : 9124214.0
+          },
+          "titleTh" : {
+            "type" : "string",
+            "example" : "นพ."
+          },
+          "firstNameTh" : {
+            "type" : "string",
+            "example" : "เด็กดี"
+          },
+          "lastNameTh" : {
+            "type" : "string",
+            "example" : "เด็กดี"
+          },
+          "titleEn" : {
+            "type" : "string",
+            "example" : "Dr."
+          },
+          "firstNameEn" : {
+            "type" : "string",
+            "example" : "dekdee"
+          },
+          "lastNameEn" : {
+            "type" : "string",
+            "example" : "dekdee"
+          },
+          "cidIsMatch" : {
+            "type" : "boolean",
+            "example" : true
+          },
+          "firstNameIsMatch" : {
+            "type" : "boolean",
+            "example" : true
+          },
+          "lastNameIsMatch" : {
+            "type" : "boolean",
+            "example" : true
           }
         }
       }
