@@ -262,6 +262,43 @@
           }
         }
       }
+    },
+    "/check-doctor-status" : {
+      "post" : {
+        "tags" : [ "HIE" ],
+        "summary" : "การตรวจสอบสถานะแพทย์",
+        "description" : "สำหรับการตรวจสอบสถานะแพทย์ในสังกัดแพทยสภาที่ยัง Active / Inactive / Expire",
+        "parameters" : [ {
+          "name" : "api-key",
+          "in" : "header",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "xxxxxxxxxxxx"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/check-doctor-response"
+                }
+              }
+            }
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/check-doctor-body"
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components" : {
@@ -285,35 +322,20 @@
             "description" : "เลขใบประกอบวิชาชีพเวชกรรม (เลข ว.)",
             "example" : 21412421
           },
-          "cid" : {
+          "licenseDate" : {
             "type" : "string",
-            "description" : "หมายเลขบัตรประชาชน",
-            "example" : 1823498394839
+            "description" : "ออกให้ ณ วันที่",
+            "example" : "2021-03-11"
           },
-          "birthDate" : {
+          "branchSpecialization" : {
             "type" : "string",
-            "description" : "วันเดือนปีเกิด",
-            "example" : "1995-03-11"
+            "description" : "สาขาเชี่ยวชาญ",
+            "example" : null
           },
-          "sex" : {
+          "graduationInstitution" : {
             "type" : "string",
-            "description" : "เพศ",
-            "example" : "male"
-          },
-          "title" : {
-            "type" : "string",
-            "description" : "คำนำหน้าชื่อ",
-            "example" : "นพ."
-          },
-          "firstName" : {
-            "type" : "string",
-            "description" : "ชื่อ",
-            "example" : "เด็กดี"
-          },
-          "lastName" : {
-            "type" : "string",
-            "description" : "นามสกุล",
-            "example" : "มีน้ำใจ"
+            "description" : "สถาบันที่สำเร็จการศึกษา",
+            "example" : null
           },
           "doctorImg" : {
             "type" : "string",
@@ -834,6 +856,24 @@
           },
           "body" : {
             "type" : "object"
+          }
+        }
+      },
+      "check-doctor-body" : {
+        "type" : "object",
+        "properties" : {
+          "doctorId" : {
+            "type" : "string",
+            "example" : 12412424
+          }
+        }
+      },
+      "check-doctor-response" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "string",
+            "example" : "active"
           }
         }
       }
