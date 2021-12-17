@@ -14,16 +14,19 @@
     }
   },
   "tags" : [ {
-    "name" : "doctorInfo",
+    "name" : "DoctorInfo",
     "description" : "ข้อมูลแพทย์"
   }, {
-    "name" : "onboard",
+    "name" : "Onboard",
     "description" : "สมัครสมาชิก"
+  }, {
+    "name" : "HIE",
+    "description" : "Login HIE via QR Code"
   } ],
   "paths" : {
     "/inquiry-doctor-info" : {
       "post" : {
-        "tags" : [ "doctorInfo" ],
+        "tags" : [ "DoctorInfo" ],
         "summary" : "inquiry doctor info",
         "description" : "inquiry doctor info",
         "parameters" : [ {
@@ -66,7 +69,7 @@
     },
     "/inquiry-mdcard" : {
       "post" : {
-        "tags" : [ "doctorInfo" ],
+        "tags" : [ "DoctorInfo" ],
         "summary" : "inquiry md card info",
         "description" : "inquiry md card info",
         "parameters" : [ {
@@ -109,7 +112,7 @@
     },
     "/update-doctor-info" : {
       "post" : {
-        "tags" : [ "doctorInfo" ],
+        "tags" : [ "DoctorInfo" ],
         "summary" : "update doctor info",
         "description" : "update doctor info",
         "parameters" : [ {
@@ -145,7 +148,7 @@
     },
     "/create-credential" : {
       "post" : {
-        "tags" : [ "onboard" ],
+        "tags" : [ "Onboard" ],
         "summary" : "create-credential",
         "description" : "create-credential",
         "parameters" : [ {
@@ -188,7 +191,7 @@
     },
     "/get-tmc-url" : {
       "get" : {
-        "tags" : [ "onboard" ],
+        "tags" : [ "Onboard" ],
         "summary" : "get url tmc webview",
         "description" : "get url tmc webview",
         "parameters" : [ {
@@ -214,37 +217,9 @@
         }
       }
     },
-    "/available-menu-list" : {
-      "get" : {
-        "tags" : [ "onboard" ],
-        "summary" : "inquiry doctor info",
-        "description" : "inquiry doctor info",
-        "parameters" : [ {
-          "name" : "api-key",
-          "in" : "header",
-          "required" : true,
-          "schema" : {
-            "type" : "string",
-            "example" : "xxxxxxxxxxxx"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "success",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/available-menu-response"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/campaign-doctor-list" : {
       "get" : {
-        "tags" : [ "onboard" ],
+        "tags" : [ "Onboard" ],
         "summary" : "campaign doctor list",
         "description" : "campaign doctor list",
         "parameters" : [ {
@@ -469,58 +444,6 @@
           "url" : {
             "type" : "string",
             "example" : "https://tmc.or.th"
-          }
-        }
-      },
-      "available-menu-response" : {
-        "type" : "object",
-        "required" : [ "available" ],
-        "properties" : {
-          "available" : {
-            "type" : "array",
-            "items" : {
-              "properties" : {
-                "methodName" : {
-                  "type" : "boolean"
-                },
-                "isEnable" : {
-                  "type" : "boolean"
-                }
-              }
-            },
-            "example" : [ {
-              "methodName" : "mdCard",
-              "isEnable" : true
-            }, {
-              "methodName" : "scanHie",
-              "isEnable" : true
-            } ]
-          }
-        }
-      },
-      "campaign-doctor-response" : {
-        "type" : "object",
-        "required" : [ "campaign" ],
-        "properties" : {
-          "campaign" : {
-            "type" : "array",
-            "items" : {
-              "properties" : {
-                "imageUrl" : {
-                  "type" : "string"
-                },
-                "redirectUrl" : {
-                  "type" : "string"
-                }
-              }
-            },
-            "example" : [ {
-              "imageUrl" : "https://www.checkraka.com/uploaded/article/news/1377030/aeon_promotion_top.png",
-              "redirectUrl" : "https://www.google.com/"
-            }, {
-              "imageUrl" : "https://hacktrue.com/wp-content/uploads/2019/08/TrueMoney-Upsize-Campaign_Banner_700x441-2100x1200.jpg",
-              "redirectUrl" : "https://www.google.com/"
-            } ]
           }
         }
       },
