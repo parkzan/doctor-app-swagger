@@ -190,7 +190,7 @@
       }
     },
     "/get-tmc-url" : {
-      "get" : {
+      "post" : {
         "tags" : [ "Onboard" ],
         "summary" : "get url tmc webview",
         "description" : "get url tmc webview",
@@ -218,7 +218,7 @@
       }
     },
     "/campaign-doctor-list" : {
-      "get" : {
+      "post" : {
         "tags" : [ "Onboard" ],
         "summary" : "campaign doctor list",
         "description" : "campaign doctor list",
