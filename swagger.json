@@ -344,52 +344,6 @@
             "type" : "string",
             "description" : "อีเมล",
             "example" : "test@email.com"
-          },
-          "officeAddress" : {
-            "type" : "object",
-            "description" : "ที่อยู่ที่ทำงาน",
-            "properties" : {
-              "addressNo" : {
-                "type" : "string",
-                "description" : "บ้านเลขที่",
-                "example" : "12/2"
-              },
-              "moo" : {
-                "type" : "string",
-                "description" : "หมู่",
-                "example" : 1
-              },
-              "soi" : {
-                "type" : "string",
-                "description" : "ซอย",
-                "example" : null
-              },
-              "road" : {
-                "type" : "string",
-                "description" : "ถนน",
-                "example" : null
-              },
-              "subDistrict" : {
-                "type" : "string",
-                "description" : "ตำบล",
-                "example" : "เมือง"
-              },
-              "district" : {
-                "type" : "string",
-                "description" : "อำเภอ",
-                "example" : "เมือง"
-              },
-              "province" : {
-                "type" : "string",
-                "description" : "จังหวัด",
-                "example" : "นครปฐม"
-              },
-              "postCode" : {
-                "type" : "string",
-                "description" : "รหัสไปรษณีย์",
-                "example" : 73000
-              }
-            }
           }
         }
       },
