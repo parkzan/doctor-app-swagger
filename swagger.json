@@ -214,6 +214,15 @@
               }
             }
           }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/get-tmc-body"
+              }
+            }
+          }
         }
       }
     },
@@ -239,6 +248,19 @@
                 "schema" : {
                   "$ref" : "#/components/schemas/campaign-doctor-response"
                 }
+              }
+            }
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "oneOf" : [ {
+                  "$ref" : "#/components/schemas/campaign-doctor-body"
+                }, {
+                  "$ref" : "#/components/schemas/campaign-doctor-body"
+                } ]
               }
             }
           }
@@ -612,6 +634,120 @@
               "imageUrl" : "https://hacktrue.com/wp-content/uploads/2019/08/TrueMoney-Upsize-Campaign_Banner_700x441-2100x1200.jpg",
               "redirectUrl" : "https://hacktrue.com/new/%E0%B8%82%E0%B9%88%E0%B8%B2%E0%B8%A7%E0%B8%97%E0%B8%A3%E0%B8%B9/4140"
             } ]
+          }
+        }
+      },
+      "get-tmc-body" : {
+        "type" : "object",
+        "properties" : {
+          "headerReq" : {
+            "type" : "object",
+            "properties" : {
+              "reqID" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqChannel" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqDtm" : {
+                "type" : "string",
+                "example" : null
+              },
+              "service" : {
+                "type" : "string",
+                "example" : null
+              },
+              "ipAddress" : {
+                "type" : "string",
+                "example" : null
+              },
+              "appVersion" : {
+                "type" : "string",
+                "example" : null
+              },
+              "clientOS" : {
+                "type" : "string",
+                "example" : null
+              },
+              "txnRefId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "appId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "uuid" : {
+                "type" : "string",
+                "example" : null
+              },
+              "apiKey" : {
+                "type" : "string",
+                "example" : null
+              }
+            }
+          },
+          "body" : {
+            "type" : "object"
+          }
+        }
+      },
+      "campaign-doctor-body" : {
+        "type" : "object",
+        "properties" : {
+          "headerReq" : {
+            "type" : "object",
+            "properties" : {
+              "reqID" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqChannel" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqDtm" : {
+                "type" : "string",
+                "example" : null
+              },
+              "service" : {
+                "type" : "string",
+                "example" : null
+              },
+              "ipAddress" : {
+                "type" : "string",
+                "example" : null
+              },
+              "appVersion" : {
+                "type" : "string",
+                "example" : null
+              },
+              "clientOS" : {
+                "type" : "string",
+                "example" : null
+              },
+              "txnRefId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "appId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "uuid" : {
+                "type" : "string",
+                "example" : null
+              },
+              "apiKey" : {
+                "type" : "string",
+                "example" : null
+              }
+            }
+          },
+          "body" : {
+            "type" : "object"
           }
         }
       }
