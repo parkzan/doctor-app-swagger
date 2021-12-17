@@ -712,7 +712,7 @@
               },
               "statusCd" : {
                 "type" : "string",
-                "example" : null
+                "example" : "0000"
               },
               "statusDesc" : {
                 "type" : "string",
