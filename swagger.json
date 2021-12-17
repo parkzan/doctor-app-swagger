@@ -197,7 +197,7 @@
         "parameters" : [ {
           "name" : "api-key",
           "in" : "header",
-          "required" : true,
+          "required" : false,
           "schema" : {
             "type" : "string",
             "example" : "xxxxxxxxxxxx"
