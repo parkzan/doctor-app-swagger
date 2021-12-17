@@ -521,7 +521,7 @@
               }
             }
           },
-          "body" : {
+          "content" : {
             "type" : "object",
             "properties" : {
               "url" : {
@@ -735,7 +735,7 @@
               }
             }
           },
-          "body" : {
+          "content" : {
             "type" : "object",
             "properties" : {
               "campaign" : {
