@@ -543,7 +543,8 @@
             "example" : "1992-03-11"
           },
           "userImageUrl" : {
-            "type" : "string"
+            "type" : "string",
+            "example" : ""
           },
           "title" : {
             "type" : "string",
