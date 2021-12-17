@@ -592,6 +592,28 @@
             "example" : true
           }
         }
+      },
+      "campaign-doctor-response" : {
+        "type" : "object",
+        "properties" : {
+          "campaign" : {
+            "type" : "array",
+            "items" : {
+              "properties" : {
+                "imageUrl" : {
+                  "type" : "string"
+                },
+                "redirectUrl" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "example" : [ {
+              "imageUrl" : "https://hacktrue.com/wp-content/uploads/2019/08/TrueMoney-Upsize-Campaign_Banner_700x441-2100x1200.jpg",
+              "redirectUrl" : "https://hacktrue.com/new/%E0%B8%82%E0%B9%88%E0%B8%B2%E0%B8%A7%E0%B8%97%E0%B8%A3%E0%B8%B9/4140"
+            } ]
+          }
+        }
       }
     }
   }
