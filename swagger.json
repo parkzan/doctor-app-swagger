@@ -146,7 +146,7 @@
         }
       }
     },
-    "/create-credential" : {
+    "/verify-credential" : {
       "post" : {
         "tags" : [ "Onboard" ],
         "summary" : "create-credential",
