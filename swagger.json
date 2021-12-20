@@ -51,9 +51,6 @@
           },
           "400" : {
             "description" : "invalid input, object invalid"
-          },
-          "409" : {
-            "description" : "an existing item already exists"
           }
         },
         "requestBody" : {
@@ -94,9 +91,6 @@
           },
           "400" : {
             "description" : "invalid input, object invalid"
-          },
-          "409" : {
-            "description" : "an existing item already exists"
           }
         },
         "requestBody" : {
