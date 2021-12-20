@@ -27,7 +27,7 @@
     "/inquiry-doctor-info" : {
       "post" : {
         "tags" : [ "DoctorInfo" ],
-        "summary" : "inquiry doctor info",
+        "summary" : "systop | inquiry doctor info",
         "description" : "inquiry doctor info",
         "parameters" : [ {
           "name" : "api-key",
@@ -70,7 +70,7 @@
     "/inquiry-mdcard" : {
       "post" : {
         "tags" : [ "DoctorInfo" ],
-        "summary" : "inquiry md card info",
+        "summary" : "systop | inquiry md card info",
         "description" : "inquiry md card info",
         "parameters" : [ {
           "name" : "api-key",
@@ -113,7 +113,7 @@
     "/update-doctor-info" : {
       "post" : {
         "tags" : [ "DoctorInfo" ],
-        "summary" : "update doctor info",
+        "summary" : "systop | update doctor info",
         "description" : "update doctor info",
         "parameters" : [ {
           "name" : "api-key",
@@ -149,7 +149,7 @@
     "/verify-credential" : {
       "post" : {
         "tags" : [ "Onboard" ],
-        "summary" : "create-credential",
+        "summary" : "systop | create-credential",
         "description" : "create-credential",
         "parameters" : [ {
           "name" : "api-key",
@@ -266,7 +266,7 @@
     "/check-doctor-status" : {
       "post" : {
         "tags" : [ "HIE" ],
-        "summary" : "การตรวจสอบสถานะแพทย์",
+        "summary" : "systop | การตรวจสอบสถานะแพทย์",
         "description" : "สำหรับการตรวจสอบสถานะแพทย์ในสังกัดแพทยสภาที่ยัง Active / Inactive / Expire",
         "parameters" : [ {
           "name" : "api-key",
