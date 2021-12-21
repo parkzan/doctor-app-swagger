@@ -63,7 +63,7 @@
         }
       }
     },
-    "/mdcard" : {
+    "/mdcard/{doctorId}" : {
       "get" : {
         "tags" : [ "DoctorInfo" ],
         "summary" : "systop | inquiry md card info",
@@ -75,6 +75,14 @@
           "schema" : {
             "type" : "string",
             "example" : "xxxxxxxxxxxx"
+          }
+        }, {
+          "name" : "doctorId",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : 42141244
           }
         } ],
         "responses" : {
