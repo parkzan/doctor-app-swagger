@@ -24,6 +24,42 @@
     "description" : "Login HIE via QR Code"
   } ],
   "paths" : {
+    "/updated-doctor-info" : {
+      "post" : {
+        "tags" : [ "DoctorInfo" ],
+        "summary" : "systop | callback update doctor info",
+        "description" : "update doctor info",
+        "parameters" : [ {
+          "name" : "api-key",
+          "in" : "header",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "xxxxxxxxxxxx"
+          }
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "success"
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          },
+          "404" : {
+            "description" : "doctorId not found"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/update-body"
+              }
+            }
+          }
+        }
+      }
+    },
     "/doctor-info/{doctorId}" : {
       "get" : {
         "tags" : [ "DoctorInfo" ],
@@ -102,7 +138,7 @@
         }
       }
     },
-    "/update-doctor-info" : {
+    "/doctor-info" : {
       "patch" : {
         "tags" : [ "DoctorInfo" ],
         "summary" : "systop | update doctor info",
