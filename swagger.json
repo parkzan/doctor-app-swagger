@@ -295,17 +295,6 @@
   },
   "components" : {
     "schemas" : {
-      "inquiry-body" : {
-        "type" : "object",
-        "required" : [ "doctorId" ],
-        "properties" : {
-          "doctorId" : {
-            "type" : "string",
-            "description" : "เลขใบประกอบวิชาชีพเวชกรรม (เลข ว.)",
-            "example" : 21412421
-          }
-        }
-      },
       "inquiry-response" : {
         "type" : "object",
         "properties" : {
