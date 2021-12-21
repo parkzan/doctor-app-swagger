@@ -44,9 +44,6 @@
           },
           "400" : {
             "description" : "invalid input, object invalid"
-          },
-          "404" : {
-            "description" : "doctorId not found"
           }
         },
         "requestBody" : {
