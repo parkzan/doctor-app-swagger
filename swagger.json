@@ -105,7 +105,7 @@
       }
     },
     "/update-doctor-info" : {
-      "post" : {
+      "patch" : {
         "tags" : [ "DoctorInfo" ],
         "summary" : "systop | update doctor info",
         "description" : "update doctor info",
