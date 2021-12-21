@@ -24,11 +24,11 @@
     "description" : "Login HIE via QR Code"
   } ],
   "paths" : {
-    "/updated-doctor-info" : {
+    "/update-doctor-info" : {
       "post" : {
         "tags" : [ "DoctorInfo" ],
         "summary" : "systop | callback update doctor info",
-        "description" : "update doctor info",
+        "description" : "callback update doctor info",
         "parameters" : [ {
           "name" : "api-key",
           "in" : "header",
