@@ -91,15 +91,6 @@
           "400" : {
             "description" : "invalid input, object invalid"
           }
-        },
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/inquiry-body"
-              }
-            }
-          }
         }
       }
     },
