@@ -24,11 +24,11 @@
     "description" : "Login HIE via QR Code"
   } ],
   "paths" : {
-    "/inquiry-doctor-info" : {
-      "post" : {
+    "/doctor-info" : {
+      "patch" : {
         "tags" : [ "DoctorInfo" ],
-        "summary" : "systop | inquiry doctor info",
-        "description" : "inquiry doctor info",
+        "summary" : "systop | update doctor info",
+        "description" : "update doctor info",
         "parameters" : [ {
           "name" : "api-key",
           "in" : "header",
@@ -39,32 +39,28 @@
           }
         } ],
         "responses" : {
-          "200" : {
-            "description" : "success",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/inquiry-response"
-                }
-              }
-            }
+          "201" : {
+            "description" : "success"
           },
           "400" : {
             "description" : "invalid input, object invalid"
+          },
+          "404" : {
+            "description" : "doctorId not found"
           }
         },
         "requestBody" : {
           "content" : {
             "application/json" : {
               "schema" : {
-                "$ref" : "#/components/schemas/inquiry-body"
+                "$ref" : "#/components/schemas/update-body"
               }
             }
           }
         }
       }
     },
-    "/inquiry-mdcard" : {
+    "/mdcard" : {
       "post" : {
         "tags" : [ "DoctorInfo" ],
         "summary" : "systop | inquiry md card info",
@@ -98,42 +94,6 @@
             "application/json" : {
               "schema" : {
                 "$ref" : "#/components/schemas/inquiry-body"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/update-doctor-info" : {
-      "patch" : {
-        "tags" : [ "DoctorInfo" ],
-        "summary" : "systop | update doctor info",
-        "description" : "update doctor info",
-        "parameters" : [ {
-          "name" : "api-key",
-          "in" : "header",
-          "required" : true,
-          "schema" : {
-            "type" : "string",
-            "example" : "xxxxxxxxxxxx"
-          }
-        } ],
-        "responses" : {
-          "201" : {
-            "description" : "success"
-          },
-          "400" : {
-            "description" : "invalid input, object invalid"
-          },
-          "404" : {
-            "description" : "doctorId not found"
-          }
-        },
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/update-body"
               }
             }
           }
