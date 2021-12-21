@@ -24,7 +24,7 @@
     "description" : "Login HIE via QR Code"
   } ],
   "paths" : {
-    "/doctor-info" : {
+    "/doctor-info/{doctorId}" : {
       "get" : {
         "tags" : [ "DoctorInfo" ],
         "summary" : "systop | inquiry doctor info",
@@ -36,6 +36,14 @@
           "schema" : {
             "type" : "string",
             "example" : "xxxxxxxxxxxx"
+          }
+        }, {
+          "name" : "doctorId",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : 42141244
           }
         } ],
         "responses" : {
@@ -52,20 +60,11 @@
           "400" : {
             "description" : "invalid input, object invalid"
           }
-        },
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/inquiry-body"
-              }
-            }
-          }
         }
       }
     },
     "/mdcard" : {
-      "post" : {
+      "get" : {
         "tags" : [ "DoctorInfo" ],
         "summary" : "systop | inquiry md card info",
         "description" : "inquiry md card info",
