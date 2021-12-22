@@ -704,45 +704,58 @@
         "type" : "object",
         "required" : [ "cidIsMatch", "firstNameIsMatch", "lastNameIsMatch", "cid", "doctorId" ],
         "properties" : {
-          "doctorId" : {
+          "code" : {
             "type" : "string",
-            "example" : 9124214.0
+            "example" : 200
           },
-          "titleTh" : {
+          "message" : {
             "type" : "string",
-            "example" : "นพ."
+            "example" : "success"
           },
-          "firstNameTh" : {
-            "type" : "string",
-            "example" : "เด็กดี"
-          },
-          "lastNameTh" : {
-            "type" : "string",
-            "example" : "เด็กดี"
-          },
-          "titleEn" : {
-            "type" : "string",
-            "example" : "Dr."
-          },
-          "firstNameEn" : {
-            "type" : "string",
-            "example" : "dekdee"
-          },
-          "lastNameEn" : {
-            "type" : "string",
-            "example" : "dekdee"
-          },
-          "cidIsMatch" : {
-            "type" : "boolean",
-            "example" : true
-          },
-          "firstNameIsMatch" : {
-            "type" : "boolean",
-            "example" : true
-          },
-          "lastNameIsMatch" : {
-            "type" : "boolean",
-            "example" : true
+          "data" : {
+            "type" : "object",
+            "properties" : {
+              "doctorId" : {
+                "type" : "string",
+                "example" : 9124214.0
+              },
+              "titleTh" : {
+                "type" : "string",
+                "example" : "นพ."
+              },
+              "firstNameTh" : {
+                "type" : "string",
+                "example" : "เด็กดี"
+              },
+              "lastNameTh" : {
+                "type" : "string",
+                "example" : "เด็กดี"
+              },
+              "titleEn" : {
+                "type" : "string",
+                "example" : "Dr."
+              },
+              "firstNameEn" : {
+                "type" : "string",
+                "example" : "dekdee"
+              },
+              "lastNameEn" : {
+                "type" : "string",
+                "example" : "dekdee"
+              },
+              "cidIsMatch" : {
+                "type" : "boolean",
+                "example" : true
+              },
+              "firstNameIsMatch" : {
+                "type" : "boolean",
+                "example" : true
+              },
+              "lastNameIsMatch" : {
+                "type" : "boolean",
+                "example" : true
+              }
+            }
           }
         }
       },
