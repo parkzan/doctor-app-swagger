@@ -40,7 +40,14 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success"
+            "description" : "success",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/update-doctor-info-response"
+                }
+              }
+            }
           },
           "400" : {
             "description" : "invalid input, object invalid"
@@ -151,7 +158,14 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success"
+            "description" : "success",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/update-doctor-info-response"
+                }
+              }
+            }
           },
           "400" : {
             "description" : "invalid input, object invalid"
@@ -331,91 +345,104 @@
       "inquiry-response" : {
         "type" : "object",
         "properties" : {
-          "doctorId" : {
+          "code" : {
             "type" : "string",
-            "description" : "เลขใบประกอบวิชาชีพเวชกรรม (เลข ว.)",
-            "example" : 21412421
+            "example" : 200
           },
-          "licenseDate" : {
+          "message" : {
             "type" : "string",
-            "description" : "ออกให้ ณ วันที่",
-            "example" : "2021-03-11"
+            "example" : "success"
           },
-          "branchSpecialization" : {
-            "type" : "string",
-            "description" : "สาขาเชี่ยวชาญ",
-            "example" : null
-          },
-          "graduationInstitution" : {
-            "type" : "string",
-            "description" : "สถาบันที่สำเร็จการศึกษา",
-            "example" : null
-          },
-          "doctorImg" : {
-            "type" : "string",
-            "description" : "รูปโปรไฟล์แพทย์",
-            "example" : "https://www.engdict.com/vocab/?q=doctor"
-          },
-          "currentAddress" : {
+          "data" : {
             "type" : "object",
-            "description" : "ข้อมูลที่อยู่ที่ใช้ในการติดต่อ",
             "properties" : {
-              "addressNo" : {
+              "doctorId" : {
                 "type" : "string",
-                "description" : "บ้านเลขที่",
-                "example" : "12/2"
+                "description" : "เลขใบประกอบวิชาชีพเวชกรรม (เลข ว.)",
+                "example" : 21412421
               },
-              "moo" : {
+              "licenseDate" : {
                 "type" : "string",
-                "description" : "หมู่",
-                "example" : 1
+                "description" : "ออกให้ ณ วันที่",
+                "example" : "2021-03-11"
               },
-              "soi" : {
+              "branchSpecialization" : {
                 "type" : "string",
-                "description" : "ซอย",
+                "description" : "สาขาเชี่ยวชาญ",
                 "example" : null
               },
-              "road" : {
+              "graduationInstitution" : {
                 "type" : "string",
-                "description" : "ถนน",
+                "description" : "สถาบันที่สำเร็จการศึกษา",
                 "example" : null
               },
-              "subDistrict" : {
+              "doctorImg" : {
                 "type" : "string",
-                "description" : "ตำบล",
-                "example" : "เมือง"
+                "description" : "รูปโปรไฟล์แพทย์",
+                "example" : "https://www.engdict.com/vocab/?q=doctor"
               },
-              "district" : {
-                "type" : "string",
-                "description" : "อำเภอ",
-                "example" : "เมือง"
+              "currentAddress" : {
+                "type" : "object",
+                "description" : "ข้อมูลที่อยู่ที่ใช้ในการติดต่อ",
+                "properties" : {
+                  "addressNo" : {
+                    "type" : "string",
+                    "description" : "บ้านเลขที่",
+                    "example" : "12/2"
+                  },
+                  "moo" : {
+                    "type" : "string",
+                    "description" : "หมู่",
+                    "example" : 1
+                  },
+                  "soi" : {
+                    "type" : "string",
+                    "description" : "ซอย",
+                    "example" : null
+                  },
+                  "road" : {
+                    "type" : "string",
+                    "description" : "ถนน",
+                    "example" : null
+                  },
+                  "subDistrict" : {
+                    "type" : "string",
+                    "description" : "ตำบล",
+                    "example" : "เมือง"
+                  },
+                  "district" : {
+                    "type" : "string",
+                    "description" : "อำเภอ",
+                    "example" : "เมือง"
+                  },
+                  "province" : {
+                    "type" : "string",
+                    "description" : "จังหวัด",
+                    "example" : "นครปฐม"
+                  },
+                  "postCode" : {
+                    "type" : "string",
+                    "description" : "รหัสไปรษณีย์",
+                    "example" : 73000
+                  }
+                }
               },
-              "province" : {
+              "mobileNo" : {
                 "type" : "string",
-                "description" : "จังหวัด",
-                "example" : "นครปฐม"
+                "description" : "เบอร์โทรติดต่อ",
+                "example" : 9.12487392E8
               },
-              "postCode" : {
+              "mobileOtp" : {
                 "type" : "string",
-                "description" : "รหัสไปรษณีย์",
-                "example" : 73000
+                "description" : "เบอร์โทรที่ใช้รับ OTP",
+                "example" : 9.12487392E8
+              },
+              "email" : {
+                "type" : "string",
+                "description" : "อีเมล",
+                "example" : "test@email.com"
               }
             }
-          },
-          "mobileNo" : {
-            "type" : "string",
-            "description" : "เบอร์โทรติดต่อ",
-            "example" : 9.12487392E8
-          },
-          "mobileOtp" : {
-            "type" : "string",
-            "description" : "เบอร์โทรที่ใช้รับ OTP",
-            "example" : 9.12487392E8
-          },
-          "email" : {
-            "type" : "string",
-            "description" : "อีเมล",
-            "example" : "test@email.com"
           }
         }
       },
@@ -550,91 +577,104 @@
         "type" : "object",
         "required" : [ "campaign" ],
         "properties" : {
-          "isActive" : {
-            "type" : "boolean",
-            "example" : true
-          },
-          "doctorId" : {
+          "code" : {
             "type" : "string",
-            "example" : 912421.0
+            "example" : 200
           },
-          "userImageUrl" : {
+          "message" : {
             "type" : "string",
-            "example" : ""
+            "example" : "success"
           },
-          "address" : {
+          "data" : {
             "type" : "object",
-            "description" : "ข้อมูลที่อยู่ที่ใช้ในการติดต่อ",
             "properties" : {
-              "addressNo" : {
-                "type" : "string",
-                "description" : "บ้านเลขที่",
-                "example" : "12/2"
+              "isActive" : {
+                "type" : "boolean",
+                "example" : true
               },
-              "moo" : {
+              "doctorId" : {
                 "type" : "string",
-                "description" : "หมู่",
-                "example" : 1
+                "example" : 912421.0
               },
-              "soi" : {
+              "userImageUrl" : {
                 "type" : "string",
-                "description" : "ซอย",
-                "example" : null
+                "example" : ""
               },
-              "road" : {
-                "type" : "string",
-                "description" : "ถนน",
-                "example" : null
+              "address" : {
+                "type" : "object",
+                "description" : "ข้อมูลที่อยู่ที่ใช้ในการติดต่อ",
+                "properties" : {
+                  "addressNo" : {
+                    "type" : "string",
+                    "description" : "บ้านเลขที่",
+                    "example" : "12/2"
+                  },
+                  "moo" : {
+                    "type" : "string",
+                    "description" : "หมู่",
+                    "example" : 1
+                  },
+                  "soi" : {
+                    "type" : "string",
+                    "description" : "ซอย",
+                    "example" : null
+                  },
+                  "road" : {
+                    "type" : "string",
+                    "description" : "ถนน",
+                    "example" : null
+                  },
+                  "subDistrict" : {
+                    "type" : "string",
+                    "description" : "ตำบล",
+                    "example" : "เมือง"
+                  },
+                  "district" : {
+                    "type" : "string",
+                    "description" : "อำเภอ",
+                    "example" : "เมือง"
+                  },
+                  "province" : {
+                    "type" : "string",
+                    "description" : "จังหวัด",
+                    "example" : "นครปฐม"
+                  },
+                  "postCode" : {
+                    "type" : "string",
+                    "description" : "รหัสไปรษณีย์",
+                    "example" : 73000
+                  }
+                }
               },
-              "subDistrict" : {
+              "qrCodeUrl" : {
                 "type" : "string",
-                "description" : "ตำบล",
-                "example" : "เมือง"
+                "example" : ""
               },
-              "district" : {
+              "licenseDate" : {
                 "type" : "string",
-                "description" : "อำเภอ",
-                "example" : "เมือง"
+                "example" : "2021-03-11"
               },
-              "province" : {
+              "dateOfIssue" : {
                 "type" : "string",
-                "description" : "จังหวัด",
-                "example" : "นครปฐม"
+                "example" : "2021-03-11"
               },
-              "postCode" : {
+              "dateOfExpiry" : {
                 "type" : "string",
-                "description" : "รหัสไปรษณีย์",
-                "example" : 73000
+                "example" : "2025-03-11"
+              },
+              "nameOfMedicalCouncil" : {
+                "type" : "string",
+                "example" : ""
+              },
+              "mdCardNo" : {
+                "type" : "string",
+                "example" : "xxxxxxxxx"
+              },
+              "serialMdCard" : {
+                "type" : "string",
+                "example" : "xxxxxxx"
               }
             }
-          },
-          "qrCodeUrl" : {
-            "type" : "string",
-            "example" : ""
-          },
-          "licenseDate" : {
-            "type" : "string",
-            "example" : "2021-03-11"
-          },
-          "dateOfIssue" : {
-            "type" : "string",
-            "example" : "2021-03-11"
-          },
-          "dateOfExpiry" : {
-            "type" : "string",
-            "example" : "2025-03-11"
-          },
-          "nameOfMedicalCouncil" : {
-            "type" : "string",
-            "example" : ""
-          },
-          "mdCardNo" : {
-            "type" : "string",
-            "example" : "xxxxxxxxx"
-          },
-          "serialMdCard" : {
-            "type" : "string",
-            "example" : "xxxxxxx"
           }
         }
       },
@@ -902,6 +942,23 @@
           "status" : {
             "type" : "string",
             "example" : "active"
+          }
+        }
+      },
+      "update-doctor-info-response" : {
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "string",
+            "example" : 200
+          },
+          "message" : {
+            "type" : "string",
+            "example" : "success"
+          },
+          "data" : {
+            "type" : "object",
+            "example" : null
           }
         }
       }
