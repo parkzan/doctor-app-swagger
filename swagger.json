@@ -939,9 +939,22 @@
       "check-doctor-response" : {
         "type" : "object",
         "properties" : {
-          "status" : {
+          "code" : {
             "type" : "string",
-            "example" : "active"
+            "example" : 200
+          },
+          "message" : {
+            "type" : "string",
+            "example" : "success"
+          },
+          "data" : {
+            "type" : "object",
+            "properties" : {
+              "status" : {
+                "type" : "string",
+                "example" : "active"
+              }
+            }
           }
         }
       },
