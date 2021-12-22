@@ -27,8 +27,8 @@
     "/update-doctor-info" : {
       "post" : {
         "tags" : [ "DoctorInfo" ],
-        "summary" : "callback update doctor info",
-        "description" : "callback update doctor info",
+        "summary" : "update doctor info from e-MD Service",
+        "description" : "update doctor info from e-MD Service",
         "parameters" : [ {
           "name" : "api-key",
           "in" : "header",
