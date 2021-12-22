@@ -957,7 +957,8 @@
             "example" : "success"
           },
           "data" : {
-            "type" : "object"
+            "type" : "object",
+            "example" : null
           }
         }
       }
