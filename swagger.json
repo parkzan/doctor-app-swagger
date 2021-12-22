@@ -39,7 +39,7 @@
           }
         } ],
         "responses" : {
-          "201" : {
+          "200" : {
             "description" : "success"
           },
           "400" : {
@@ -150,7 +150,7 @@
           }
         } ],
         "responses" : {
-          "201" : {
+          "200" : {
             "description" : "success"
           },
           "400" : {
