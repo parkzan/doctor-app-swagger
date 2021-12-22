@@ -27,7 +27,7 @@
     "/update-doctor-info" : {
       "post" : {
         "tags" : [ "DoctorInfo" ],
-        "summary" : "update doctor info from e-MD Service",
+        "summary" : "update doctor info from MD e-Service",
         "description" : "update doctor info from e-MD Service",
         "parameters" : [ {
           "name" : "api-key",
