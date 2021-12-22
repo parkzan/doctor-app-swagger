@@ -518,7 +518,7 @@
                 "type" : "string",
                 "example" : null
               },
-              "txnRefID" : {
+              "txnRefId" : {
                 "type" : "string",
                 "example" : null
               },
@@ -529,7 +529,7 @@
                 "type" : "string",
                 "example" : null
               },
-              "clientOS" : {
+              "clientOs" : {
                 "type" : "string",
                 "example" : null
               }
@@ -640,13 +640,13 @@
       },
       "create-credential-body" : {
         "type" : "object",
-        "required" : [ "doctorId", "firstName", "lastName", "cid" ],
+        "required" : [ "doctorId", "firstName", "lastName", "cId" ],
         "properties" : {
           "doctorId" : {
             "type" : "string",
             "example" : 9.2141242E7
           },
-          "cid" : {
+          "cId" : {
             "type" : "string",
             "example" : 1827392847382
           },
@@ -732,7 +732,7 @@
                 "type" : "string",
                 "example" : null
               },
-              "txnRefID" : {
+              "txnRefId" : {
                 "type" : "string",
                 "example" : null
               },
@@ -743,7 +743,7 @@
                 "type" : "string",
                 "example" : null
               },
-              "clientOS" : {
+              "clientOs" : {
                 "type" : "string",
                 "example" : null
               }
@@ -803,7 +803,7 @@
                 "type" : "string",
                 "example" : null
               },
-              "clientOS" : {
+              "clientOs" : {
                 "type" : "string",
                 "example" : null
               },
@@ -860,7 +860,7 @@
                 "type" : "string",
                 "example" : null
               },
-              "clientOS" : {
+              "clientOs" : {
                 "type" : "string",
                 "example" : null
               },
