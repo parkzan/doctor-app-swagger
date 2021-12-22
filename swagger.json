@@ -825,7 +825,7 @@
               }
             }
           },
-          "body" : {
+          "content" : {
             "type" : "object"
           }
         }
@@ -882,7 +882,7 @@
               }
             }
           },
-          "body" : {
+          "content" : {
             "type" : "object"
           }
         }
