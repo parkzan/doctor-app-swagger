@@ -17,6 +17,9 @@
     "name" : "DoctorInfo",
     "description" : "ข้อมูลแพทย์"
   }, {
+    "name" : "DoctorInfo (Mock api)",
+    "description" : "ข้อมูลแพทย์"
+  }, {
     "name" : "Onboard",
     "description" : "สมัครสมาชิก"
   }, {
@@ -333,6 +336,46 @@
             "application/json" : {
               "schema" : {
                 "$ref" : "#/components/schemas/check-doctor-body"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/inquiry-doctor-info" : {
+      "post" : {
+        "tags" : [ "DoctorInfo (Mock api)" ],
+        "summary" : "inquiry doctor info",
+        "description" : "inquiry doctor info",
+        "parameters" : [ {
+          "name" : "api-key",
+          "in" : "header",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "xxxxxxxxxxxx"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inquiry-doctor-response"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/inquiry-doctor-body"
               }
             }
           }
@@ -985,6 +1028,205 @@
           "data" : {
             "type" : "object",
             "example" : null
+          }
+        }
+      },
+      "inquiry-doctor-body" : {
+        "type" : "object",
+        "properties" : {
+          "headerReq" : {
+            "type" : "object",
+            "properties" : {
+              "reqID" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqChannel" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqDtm" : {
+                "type" : "string",
+                "example" : null
+              },
+              "service" : {
+                "type" : "string",
+                "example" : null
+              },
+              "ipAddress" : {
+                "type" : "string",
+                "example" : null
+              },
+              "appVersion" : {
+                "type" : "string",
+                "example" : null
+              },
+              "clientOs" : {
+                "type" : "string",
+                "example" : null
+              },
+              "txnRefId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "appId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "uuid" : {
+                "type" : "string",
+                "example" : null
+              },
+              "apiKey" : {
+                "type" : "string",
+                "example" : null
+              }
+            }
+          },
+          "content" : {
+            "type" : "object",
+            "properties" : {
+              "doctorId" : {
+                "type" : "string",
+                "example" : 2414124
+              }
+            }
+          }
+        }
+      },
+      "inquiry-doctor-response" : {
+        "type" : "object",
+        "properties" : {
+          "headerResp" : {
+            "type" : "object",
+            "properties" : {
+              "reqID" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqDtm" : {
+                "type" : "string",
+                "example" : null
+              },
+              "service" : {
+                "type" : "string",
+                "example" : null
+              },
+              "statusCd" : {
+                "type" : "string",
+                "example" : "0000"
+              },
+              "statusDesc" : {
+                "type" : "string",
+                "example" : null
+              },
+              "txnRefId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "errorDisplay" : {
+                "type" : "object"
+              },
+              "appVersion" : {
+                "type" : "string",
+                "example" : null
+              },
+              "clientOs" : {
+                "type" : "string",
+                "example" : null
+              }
+            }
+          },
+          "content" : {
+            "type" : "object",
+            "properties" : {
+              "doctorId" : {
+                "type" : "string",
+                "description" : "เลขใบประกอบวิชาชีพเวชกรรม (เลข ว.)",
+                "example" : 21412421
+              },
+              "licenseDate" : {
+                "type" : "string",
+                "description" : "ออกให้ ณ วันที่",
+                "example" : "2021-03-11"
+              },
+              "branchSpecialization" : {
+                "type" : "string",
+                "description" : "สาขาเชี่ยวชาญ",
+                "example" : null
+              },
+              "graduationInstitution" : {
+                "type" : "string",
+                "description" : "สถาบันที่สำเร็จการศึกษา",
+                "example" : null
+              },
+              "doctorImg" : {
+                "type" : "string",
+                "description" : "รูปโปรไฟล์แพทย์",
+                "example" : "https://www.engdict.com/vocab/?q=doctor"
+              },
+              "currentAddress" : {
+                "type" : "object",
+                "description" : "ข้อมูลที่อยู่ที่ใช้ในการติดต่อ",
+                "properties" : {
+                  "addressNo" : {
+                    "type" : "string",
+                    "description" : "บ้านเลขที่",
+                    "example" : "12/2"
+                  },
+                  "moo" : {
+                    "type" : "string",
+                    "description" : "หมู่",
+                    "example" : 1
+                  },
+                  "soi" : {
+                    "type" : "string",
+                    "description" : "ซอย",
+                    "example" : null
+                  },
+                  "road" : {
+                    "type" : "string",
+                    "description" : "ถนน",
+                    "example" : null
+                  },
+                  "subDistrict" : {
+                    "type" : "string",
+                    "description" : "ตำบล",
+                    "example" : "เมือง"
+                  },
+                  "district" : {
+                    "type" : "string",
+                    "description" : "อำเภอ",
+                    "example" : "เมือง"
+                  },
+                  "province" : {
+                    "type" : "string",
+                    "description" : "จังหวัด",
+                    "example" : "นครปฐม"
+                  },
+                  "postCode" : {
+                    "type" : "string",
+                    "description" : "รหัสไปรษณีย์",
+                    "example" : 73000
+                  }
+                }
+              },
+              "mobileNo" : {
+                "type" : "string",
+                "description" : "เบอร์โทรติดต่อ",
+                "example" : 9.12487392E8
+              },
+              "mobileOtp" : {
+                "type" : "string",
+                "description" : "เบอร์โทรที่ใช้รับ OTP",
+                "example" : 9.12487392E8
+              },
+              "email" : {
+                "type" : "string",
+                "description" : "อีเมล",
+                "example" : "test@email.com"
+              }
+            }
           }
         }
       }
