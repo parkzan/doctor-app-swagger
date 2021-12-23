@@ -568,7 +568,7 @@
           "headerResp" : {
             "type" : "object",
             "properties" : {
-              "reqID" : {
+              "reqId" : {
                 "type" : "string",
                 "example" : null
               },
@@ -808,7 +808,7 @@
           "headerResp" : {
             "type" : "object",
             "properties" : {
-              "reqID" : {
+              "reqId" : {
                 "type" : "string",
                 "example" : null
               },
@@ -875,7 +875,7 @@
           "headerReq" : {
             "type" : "object",
             "properties" : {
-              "reqID" : {
+              "reqId" : {
                 "type" : "string",
                 "example" : null
               },
@@ -932,7 +932,7 @@
           "headerReq" : {
             "type" : "object",
             "properties" : {
-              "reqID" : {
+              "reqId" : {
                 "type" : "string",
                 "example" : null
               },
@@ -1037,7 +1037,7 @@
           "headerReq" : {
             "type" : "object",
             "properties" : {
-              "reqID" : {
+              "reqId" : {
                 "type" : "string",
                 "example" : null
               },
@@ -1100,7 +1100,7 @@
           "headerResp" : {
             "type" : "object",
             "properties" : {
-              "reqID" : {
+              "reqId" : {
                 "type" : "string",
                 "example" : null
               },
