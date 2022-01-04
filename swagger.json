@@ -182,7 +182,7 @@
           "content" : {
             "application/json" : {
               "schema" : {
-                "$ref" : "#/components/schemas/update-body"
+                "$ref" : "#/components/schemas/update-doctor-info-body"
               }
             }
           }
@@ -1265,6 +1265,78 @@
           "doctorId" : {
             "type" : "string",
             "example" : 1242142
+          }
+        }
+      },
+      "update-doctor-info-body" : {
+        "type" : "object",
+        "required" : [ "doctorId" ],
+        "properties" : {
+          "doctorId" : {
+            "type" : "string",
+            "description" : "เลขใบประกอบวิชาชีพเวชกรรม (เลข ว.)",
+            "example" : 21412421
+          },
+          "mobileNo" : {
+            "type" : "string",
+            "description" : "เบอร์โทรติดต่อ",
+            "example" : 9.12487392E8
+          },
+          "mobileOtp" : {
+            "type" : "string",
+            "description" : "เบอร์โทรที่ใช้รับ OTP",
+            "example" : 9.12487392E8
+          },
+          "email" : {
+            "type" : "string",
+            "description" : "อีเมล",
+            "example" : "test@email.com"
+          },
+          "currentAddress" : {
+            "type" : "object",
+            "description" : "ข้อมูลที่อยู่ที่ใช้ในการติดต่อ",
+            "properties" : {
+              "addressNo" : {
+                "type" : "string",
+                "description" : "บ้านเลขที่",
+                "example" : "12/2"
+              },
+              "moo" : {
+                "type" : "string",
+                "description" : "หมู่",
+                "example" : 1
+              },
+              "soi" : {
+                "type" : "string",
+                "description" : "ซอย",
+                "example" : null
+              },
+              "road" : {
+                "type" : "string",
+                "description" : "ถนน",
+                "example" : null
+              },
+              "subDistrict" : {
+                "type" : "string",
+                "description" : "ตำบล",
+                "example" : "เมือง"
+              },
+              "district" : {
+                "type" : "string",
+                "description" : "อำเภอ",
+                "example" : "เมือง"
+              },
+              "province" : {
+                "type" : "string",
+                "description" : "จังหวัด",
+                "example" : "นครปฐม"
+              },
+              "postCode" : {
+                "type" : "string",
+                "description" : "รหัสไปรษณีย์",
+                "example" : 73000
+              }
+            }
           }
         }
       }
