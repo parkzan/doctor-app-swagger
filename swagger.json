@@ -106,8 +106,8 @@
         }
       }
     },
-    "/mdcard/{doctorId}" : {
-      "get" : {
+    "/create-mdcard" : {
+      "post" : {
         "tags" : [ "DoctorInfo" ],
         "summary" : "inquiry md card info",
         "description" : "inquiry md card info",
@@ -118,14 +118,6 @@
           "schema" : {
             "type" : "string",
             "example" : "xxxxxxxxxxxx"
-          }
-        }, {
-          "name" : "doctorId",
-          "in" : "path",
-          "required" : true,
-          "schema" : {
-            "type" : "string",
-            "example" : 42141244
           }
         } ],
         "responses" : {
@@ -141,6 +133,15 @@
           },
           "400" : {
             "description" : "invalid input, object invalid"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/get-mdcard-body"
+              }
+            }
           }
         }
       }
@@ -1255,6 +1256,15 @@
                 "example" : "test@email.com"
               }
             }
+          }
+        }
+      },
+      "get-mdcard-body" : {
+        "type" : "object",
+        "properties" : {
+          "doctorId" : {
+            "type" : "string",
+            "example" : 1242142
           }
         }
       }
