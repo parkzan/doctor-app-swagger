@@ -25,6 +25,9 @@
   }, {
     "name" : "HIE",
     "description" : "Login HIE via QR Code"
+  }, {
+    "name" : "Master data",
+    "description" : "Master data"
   } ],
   "paths" : {
     "/update-doctor-info" : {
@@ -379,6 +382,37 @@
                 "$ref" : "#/components/schemas/inquiry-doctor-body"
               }
             }
+          }
+        }
+      }
+    },
+    "/masterdata-address" : {
+      "get" : {
+        "tags" : [ "Master data" ],
+        "summary" : "get master data address",
+        "description" : "get master data address",
+        "parameters" : [ {
+          "name" : "api-key",
+          "in" : "header",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "xxxxxxxxxxxx"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/masterdata-address-response"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
           }
         }
       }
@@ -1349,6 +1383,22 @@
                 "example" : 73000
               }
             }
+          }
+        }
+      },
+      "masterdata-address-response" : {
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "string",
+            "example" : 200
+          },
+          "message" : {
+            "type" : "string",
+            "example" : "success"
+          },
+          "data" : {
+            "type" : "object"
           }
         }
       }
