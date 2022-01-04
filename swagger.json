@@ -189,7 +189,7 @@
         }
       }
     },
-    "/verify-credential" : {
+    "/md-econ/verify-credential" : {
       "post" : {
         "tags" : [ "Onboard" ],
         "summary" : "create-credential",
@@ -754,6 +754,10 @@
           "doctorId" : {
             "type" : "string",
             "example" : 9.2141242E7
+          },
+          "pinCodeMd" : {
+            "type" : "string",
+            "example" : 1234
           },
           "cId" : {
             "type" : "string",
