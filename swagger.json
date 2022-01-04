@@ -416,6 +416,46 @@
           }
         }
       }
+    },
+    "/callback-mdcard/expired" : {
+      "post" : {
+        "tags" : [ "DoctorInfo" ],
+        "summary" : "list mdcard expired",
+        "description" : "list mdcard expired",
+        "parameters" : [ {
+          "name" : "api-key",
+          "in" : "header",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "xxxxxxxxxxxx"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/update-doctor-info-response"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/callback-mdcard-expired-body"
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components" : {
@@ -1427,6 +1467,23 @@
                   }
                 }
               }
+            }
+          }
+        }
+      },
+      "callback-mdcard-expired-body" : {
+        "type" : "object",
+        "properties" : {
+          "expireBeforeThirtyDay" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "expire" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
             }
           }
         }
