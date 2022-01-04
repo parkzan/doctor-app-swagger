@@ -232,7 +232,7 @@
         }
       }
     },
-    "/get-tmc-url" : {
+    "/md-econ/get-tmc-url" : {
       "post" : {
         "tags" : [ "Onboard" ],
         "summary" : "get url tmc webview",
@@ -269,7 +269,7 @@
         }
       }
     },
-    "/campaign-doctor-list" : {
+    "/md-econ/campaign-doctor-list" : {
       "post" : {
         "tags" : [ "Onboard" ],
         "summary" : "campaign doctor list",
@@ -306,7 +306,7 @@
         }
       }
     },
-    "/check-doctor-status" : {
+    "/md-econ/check-doctor-status" : {
       "post" : {
         "tags" : [ "HIE" ],
         "summary" : "การตรวจสอบสถานะแพทย์",
@@ -1022,6 +1022,10 @@
           "doctorId" : {
             "type" : "string",
             "example" : 12412424
+          },
+          "clientId" : {
+            "type" : "string",
+            "example" : 241424124124214
           }
         }
       },
@@ -1042,6 +1046,10 @@
               "status" : {
                 "type" : "string",
                 "example" : "active"
+              },
+              "clientId" : {
+                "type" : "string",
+                "example" : 241424124124214
               }
             }
           }
