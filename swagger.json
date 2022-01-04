@@ -498,7 +498,47 @@
             "description" : "เลขใบประกอบวิชาชีพเวชกรรม (เลข ว.)",
             "example" : 21412421
           },
-          "currentAddress" : {
+          "thaititle" : {
+            "type" : "string",
+            "description" : "เลขใบประกอบวิชาชีพเวชกรรม (เลข ว.)",
+            "example" : 21412421
+          },
+          "thainame" : {
+            "type" : "string",
+            "description" : "เลขใบประกอบวิชาชีพเวชกรรม (เลข ว.)",
+            "example" : 21412421
+          },
+          "thaisurname" : {
+            "type" : "string",
+            "description" : "เลขใบประกอบวิชาชีพเวชกรรม (เลข ว.)",
+            "example" : 21412421
+          },
+          "engtitle" : {
+            "type" : "string",
+            "description" : "เลขใบประกอบวิชาชีพเวชกรรม (เลข ว.)",
+            "example" : 21412421
+          },
+          "engname" : {
+            "type" : "string",
+            "description" : "เลขใบประกอบวิชาชีพเวชกรรม (เลข ว.)",
+            "example" : 21412421
+          },
+          "engsurname" : {
+            "type" : "string",
+            "description" : "เลขใบประกอบวิชาชีพเวชกรรม (เลข ว.)",
+            "example" : 21412421
+          },
+          "branchSpecialization" : {
+            "type" : "string",
+            "description" : "เลขใบประกอบวิชาชีพเวชกรรม (เลข ว.)",
+            "example" : 21412421
+          },
+          "graduationInstitution" : {
+            "type" : "string",
+            "description" : "เลขใบประกอบวิชาชีพเวชกรรม (เลข ว.)",
+            "example" : 21412421
+          },
+          "workAddress" : {
             "type" : "object",
             "description" : "ข้อมูลที่อยู่ที่ใช้ในการติดต่อ",
             "properties" : {
