@@ -1398,7 +1398,36 @@
             "example" : "success"
           },
           "data" : {
-            "type" : "object"
+            "type" : "object",
+            "properties" : {
+              "currentAddress" : {
+                "type" : "array",
+                "items" : {
+                  "properties" : {
+                    "subDistrict" : {
+                      "type" : "string",
+                      "description" : "ตำบล",
+                      "example" : "เมือง"
+                    },
+                    "district" : {
+                      "type" : "string",
+                      "description" : "อำเภอ",
+                      "example" : "เมือง"
+                    },
+                    "province" : {
+                      "type" : "string",
+                      "description" : "จังหวัด",
+                      "example" : "นครปฐม"
+                    },
+                    "postCode" : {
+                      "type" : "string",
+                      "description" : "รหัสไปรษณีย์",
+                      "example" : 73000
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
