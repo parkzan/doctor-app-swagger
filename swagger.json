@@ -189,7 +189,7 @@
         }
       }
     },
-    "/md-econ/verify-credential" : {
+    "/verify-credential" : {
       "post" : {
         "tags" : [ "Onboard" ],
         "summary" : "create-credential",
@@ -232,7 +232,7 @@
         }
       }
     },
-    "/md-econ/get-tmc-url" : {
+    "/get-tmc-url" : {
       "post" : {
         "tags" : [ "Onboard" ],
         "summary" : "get url tmc webview",
@@ -269,7 +269,7 @@
         }
       }
     },
-    "/md-econ/campaign-doctor-list" : {
+    "/campaign-doctor-list" : {
       "post" : {
         "tags" : [ "Onboard" ],
         "summary" : "campaign doctor list",
@@ -306,7 +306,7 @@
         }
       }
     },
-    "/md-econ/check-doctor-status" : {
+    "/check-doctor-status" : {
       "post" : {
         "tags" : [ "HIE" ],
         "summary" : "การตรวจสอบสถานะแพทย์",
