@@ -573,32 +573,32 @@
             "description" : "เลขใบประกอบวิชาชีพเวชกรรม (เลข ว.)",
             "example" : 21412421
           },
-          "thaititle" : {
+          "thaiTitle" : {
             "type" : "string",
             "description" : "เลขใบประกอบวิชาชีพเวชกรรม (เลข ว.)",
             "example" : 21412421
           },
-          "thainame" : {
+          "thaiName" : {
             "type" : "string",
             "description" : "เลขใบประกอบวิชาชีพเวชกรรม (เลข ว.)",
             "example" : 21412421
           },
-          "thaisurname" : {
+          "thaiSurname" : {
             "type" : "string",
             "description" : "เลขใบประกอบวิชาชีพเวชกรรม (เลข ว.)",
             "example" : 21412421
           },
-          "engtitle" : {
+          "engTitle" : {
             "type" : "string",
             "description" : "เลขใบประกอบวิชาชีพเวชกรรม (เลข ว.)",
             "example" : 21412421
           },
-          "engname" : {
+          "engName" : {
             "type" : "string",
             "description" : "เลขใบประกอบวิชาชีพเวชกรรม (เลข ว.)",
             "example" : 21412421
           },
-          "engsurname" : {
+          "engSurname" : {
             "type" : "string",
             "description" : "เลขใบประกอบวิชาชีพเวชกรรม (เลข ว.)",
             "example" : 21412421
