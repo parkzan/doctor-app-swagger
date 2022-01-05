@@ -417,7 +417,7 @@
         }
       }
     },
-    "/callback-mdcard/expired" : {
+    "/notification-mdcard/expired" : {
       "post" : {
         "tags" : [ "DoctorInfo" ],
         "summary" : "list mdcard expired",
@@ -899,18 +899,6 @@
               "lastNameEn" : {
                 "type" : "string",
                 "example" : "dekdee"
-              },
-              "cidIsMatch" : {
-                "type" : "boolean",
-                "example" : true
-              },
-              "firstNameIsMatch" : {
-                "type" : "boolean",
-                "example" : true
-              },
-              "lastNameIsMatch" : {
-                "type" : "boolean",
-                "example" : true
               }
             }
           }
@@ -1484,26 +1472,16 @@
       "callback-mdcard-expired-body" : {
         "type" : "object",
         "properties" : {
-          "expireBeforeThirtyDay" : {
-            "type" : "object",
-            "properties" : {
-              "mdCardExpireThrityDay" : {
-                "type" : "array",
-                "items" : {
-                  "type" : "string"
-                }
-              }
+          "mdCardExpireThrityDay" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
             }
           },
-          "expire" : {
-            "type" : "object",
-            "properties" : {
-              "mdCardExpire" : {
-                "type" : "array",
-                "items" : {
-                  "type" : "string"
-                }
-              }
+          "mdCardExpire" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
             }
           }
         }
