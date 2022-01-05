@@ -1523,16 +1523,20 @@
                     "example" : 10500
                   },
                   "titleTh" : {
-                    "type" : "string"
+                    "type" : "string",
+                    "example" : "เกิดข้อผิดพลาดของระบบ"
                   },
                   "messageTh" : {
-                    "type" : "string"
+                    "type" : "string",
+                    "example" : "กรุณาติดต่อผู้ดูแลระบบ"
                   },
                   "titleEn" : {
-                    "type" : "string"
+                    "type" : "string",
+                    "example" : "Internal Server Error"
                   },
                   "messageEn" : {
-                    "type" : "string"
+                    "type" : "string",
+                    "example" : "Please contact the administrator"
                   }
                 }
               },
@@ -1581,16 +1585,20 @@
                     "example" : 10400
                   },
                   "titleTh" : {
-                    "type" : "string"
+                    "type" : "string",
+                    "example" : "เกิดข้อผิดพลาด"
                   },
                   "messageTh" : {
-                    "type" : "string"
+                    "type" : "string",
+                    "example" : "ข้อมูลพารามิเตอร์ไม่ถูกต้อง"
                   },
                   "titleEn" : {
-                    "type" : "string"
+                    "type" : "string",
+                    "example" : "Bad Request"
                   },
                   "messageEn" : {
-                    "type" : "string"
+                    "type" : "string",
+                    "example" : "The server could not understand the request due to invalid syntax."
                   }
                 }
               },
