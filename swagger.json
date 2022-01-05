@@ -1500,7 +1500,7 @@
                 "properties" : {
                   "code" : {
                     "type" : "integer",
-                    "example" : 500
+                    "example" : 10500
                   },
                   "titleTh" : {
                     "type" : "string"
