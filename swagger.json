@@ -710,30 +710,30 @@
             "properties" : {
               "reqId" : {
                 "type" : "string",
-                "example" : null
+                "example" : ""
               },
               "reqDtm" : {
                 "type" : "string",
-                "example" : null
+                "example" : ""
               },
               "service" : {
                 "type" : "string",
-                "example" : null
+                "example" : ""
               },
               "txnRefId" : {
                 "type" : "string",
-                "example" : null
+                "example" : ""
               },
               "errorDisplay" : {
                 "type" : "object"
               },
               "appVersion" : {
                 "type" : "string",
-                "example" : null
+                "example" : ""
               },
               "clientOs" : {
                 "type" : "string",
-                "example" : null
+                "example" : ""
               }
             }
           },
@@ -934,30 +934,30 @@
             "properties" : {
               "reqId" : {
                 "type" : "string",
-                "example" : null
+                "example" : ""
               },
               "reqDtm" : {
                 "type" : "string",
-                "example" : null
+                "example" : ""
               },
               "service" : {
                 "type" : "string",
-                "example" : null
+                "example" : ""
               },
               "txnRefId" : {
                 "type" : "string",
-                "example" : null
+                "example" : ""
               },
               "errorDisplay" : {
                 "type" : "object"
               },
               "appVersion" : {
                 "type" : "string",
-                "example" : null
+                "example" : ""
               },
               "clientOs" : {
                 "type" : "string",
-                "example" : null
+                "example" : ""
               }
             }
           },
