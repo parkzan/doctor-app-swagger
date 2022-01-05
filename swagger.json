@@ -680,20 +680,30 @@
                 "type" : "string",
                 "example" : null
               },
-              "statusCd" : {
-                "type" : "string",
-                "example" : "0000"
-              },
-              "statusDesc" : {
-                "type" : "string",
-                "example" : null
-              },
               "txnRefId" : {
                 "type" : "string",
                 "example" : null
               },
               "errorDisplay" : {
-                "type" : "object"
+                "type" : "object",
+                "properties" : {
+                  "code" : {
+                    "type" : "integer",
+                    "example" : 500
+                  },
+                  "titleTh" : {
+                    "type" : "string"
+                  },
+                  "messageTh" : {
+                    "type" : "string"
+                  },
+                  "titleEn" : {
+                    "type" : "string"
+                  },
+                  "messageEn" : {
+                    "type" : "string"
+                  }
+                }
               },
               "appVersion" : {
                 "type" : "string",
@@ -1475,15 +1485,25 @@
         "type" : "object",
         "properties" : {
           "expireBeforeThirtyDay" : {
-            "type" : "array",
-            "items" : {
-              "type" : "string"
+            "type" : "object",
+            "properties" : {
+              "mdCardExpireThrityDay" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "string"
+                }
+              }
             }
           },
           "expire" : {
-            "type" : "array",
-            "items" : {
-              "type" : "string"
+            "type" : "object",
+            "properties" : {
+              "mdCardExpire" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "string"
+                }
+              }
             }
           }
         }
