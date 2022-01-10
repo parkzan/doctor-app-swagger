@@ -496,6 +496,126 @@
           }
         }
       }
+    },
+    "/province" : {
+      "post" : {
+        "tags" : [ "Master data" ],
+        "summary" : "inquiry province list",
+        "description" : "inquiry province list",
+        "parameters" : [ {
+          "name" : "api-key",
+          "in" : "header",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "xxxxxxxxxxxx"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inquiry-province-response"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/inquiry-province-body"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/district" : {
+      "post" : {
+        "tags" : [ "Master data" ],
+        "summary" : "inquiry district list",
+        "description" : "inquiry district list",
+        "parameters" : [ {
+          "name" : "api-key",
+          "in" : "header",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "xxxxxxxxxxxx"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inquiry-district-response"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/inquiry-district-body"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sub-district" : {
+      "post" : {
+        "tags" : [ "Master data" ],
+        "summary" : "inquiry sub district list",
+        "description" : "inquiry sub district list",
+        "parameters" : [ {
+          "name" : "api-key",
+          "in" : "header",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "xxxxxxxxxxxx"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inquiry-subdistrict-response"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/inquiry-subdistrict-body"
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components" : {
@@ -1614,6 +1734,410 @@
           },
           "content" : {
             "type" : "object"
+          }
+        }
+      },
+      "inquiry-province-body" : {
+        "type" : "object",
+        "properties" : {
+          "headerReq" : {
+            "type" : "object",
+            "properties" : {
+              "reqId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqChannel" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqDtm" : {
+                "type" : "string",
+                "example" : null
+              },
+              "service" : {
+                "type" : "string",
+                "example" : null
+              },
+              "ipAddress" : {
+                "type" : "string",
+                "example" : null
+              },
+              "appVersion" : {
+                "type" : "string",
+                "example" : null
+              },
+              "clientOs" : {
+                "type" : "string",
+                "example" : null
+              },
+              "txnRefId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "appId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "uuid" : {
+                "type" : "string",
+                "example" : null
+              },
+              "apiKey" : {
+                "type" : "string",
+                "example" : null
+              }
+            }
+          },
+          "content" : {
+            "type" : "object"
+          }
+        }
+      },
+      "inquiry-province-response" : {
+        "type" : "object",
+        "properties" : {
+          "headerResp" : {
+            "type" : "object",
+            "properties" : {
+              "reqId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqDtm" : {
+                "type" : "string",
+                "example" : null
+              },
+              "service" : {
+                "type" : "string",
+                "example" : null
+              },
+              "txnRefId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "errorDisplay" : {
+                "type" : "object"
+              },
+              "appVersion" : {
+                "type" : "string",
+                "example" : null
+              },
+              "clientOs" : {
+                "type" : "string",
+                "example" : null
+              }
+            }
+          },
+          "content" : {
+            "type" : "object",
+            "properties" : {
+              "provinces" : {
+                "type" : "array",
+                "items" : {
+                  "properties" : {
+                    "code" : {
+                      "type" : "string"
+                    },
+                    "name" : {
+                      "type" : "string"
+                    }
+                  }
+                },
+                "example" : [ {
+                  "code" : "1",
+                  "name" : "กรุงเทพมหานคร"
+                }, {
+                  "code" : "10",
+                  "name" : "สระบุรี"
+                }, {
+                  "code" : "11",
+                  "name" : "ชลบุรี"
+                }, {
+                  "code" : "12",
+                  "name" : "ระยอง"
+                }, {
+                  "code" : "13",
+                  "name" : "จันทบุรี"
+                } ]
+              }
+            }
+          }
+        }
+      },
+      "inquiry-district-body" : {
+        "type" : "object",
+        "properties" : {
+          "headerReq" : {
+            "type" : "object",
+            "properties" : {
+              "reqId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqChannel" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqDtm" : {
+                "type" : "string",
+                "example" : null
+              },
+              "service" : {
+                "type" : "string",
+                "example" : null
+              },
+              "ipAddress" : {
+                "type" : "string",
+                "example" : null
+              },
+              "appVersion" : {
+                "type" : "string",
+                "example" : null
+              },
+              "clientOs" : {
+                "type" : "string",
+                "example" : null
+              },
+              "txnRefId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "appId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "uuid" : {
+                "type" : "string",
+                "example" : null
+              },
+              "apiKey" : {
+                "type" : "string",
+                "example" : null
+              }
+            }
+          },
+          "content" : {
+            "type" : "object",
+            "properties" : {
+              "provinceCode" : {
+                "type" : "string",
+                "example" : 1
+              }
+            }
+          }
+        }
+      },
+      "inquiry-district-response" : {
+        "type" : "object",
+        "properties" : {
+          "headerResp" : {
+            "type" : "object",
+            "properties" : {
+              "reqId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqDtm" : {
+                "type" : "string",
+                "example" : null
+              },
+              "service" : {
+                "type" : "string",
+                "example" : null
+              },
+              "txnRefId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "errorDisplay" : {
+                "type" : "object"
+              },
+              "appVersion" : {
+                "type" : "string",
+                "example" : null
+              },
+              "clientOs" : {
+                "type" : "string",
+                "example" : null
+              }
+            }
+          },
+          "content" : {
+            "type" : "object",
+            "properties" : {
+              "districts" : {
+                "type" : "array",
+                "items" : {
+                  "properties" : {
+                    "code" : {
+                      "type" : "string"
+                    },
+                    "name" : {
+                      "type" : "string"
+                    }
+                  }
+                },
+                "example" : [ {
+                  "code" : "1",
+                  "name" : "พระนคร"
+                }, {
+                  "code" : "2",
+                  "name" : "ดุสิต"
+                }, {
+                  "code" : "3",
+                  "name" : "หนองจอก"
+                }, {
+                  "code" : "4",
+                  "name" : "บางรัก"
+                }, {
+                  "code" : "5",
+                  "name" : "บางเขน"
+                } ]
+              }
+            }
+          }
+        }
+      },
+      "inquiry-subdistrict-body" : {
+        "type" : "object",
+        "properties" : {
+          "headerReq" : {
+            "type" : "object",
+            "properties" : {
+              "reqId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqChannel" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqDtm" : {
+                "type" : "string",
+                "example" : null
+              },
+              "service" : {
+                "type" : "string",
+                "example" : null
+              },
+              "ipAddress" : {
+                "type" : "string",
+                "example" : null
+              },
+              "appVersion" : {
+                "type" : "string",
+                "example" : null
+              },
+              "clientOs" : {
+                "type" : "string",
+                "example" : null
+              },
+              "txnRefId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "appId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "uuid" : {
+                "type" : "string",
+                "example" : null
+              },
+              "apiKey" : {
+                "type" : "string",
+                "example" : null
+              }
+            }
+          },
+          "content" : {
+            "type" : "object",
+            "properties" : {
+              "districtCode" : {
+                "type" : "string",
+                "example" : 1
+              }
+            }
+          }
+        }
+      },
+      "inquiry-subdistrict-response" : {
+        "type" : "object",
+        "properties" : {
+          "headerResp" : {
+            "type" : "object",
+            "properties" : {
+              "reqId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqDtm" : {
+                "type" : "string",
+                "example" : null
+              },
+              "service" : {
+                "type" : "string",
+                "example" : null
+              },
+              "txnRefId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "errorDisplay" : {
+                "type" : "object"
+              },
+              "appVersion" : {
+                "type" : "string",
+                "example" : null
+              },
+              "clientOs" : {
+                "type" : "string",
+                "example" : null
+              }
+            }
+          },
+          "content" : {
+            "type" : "object",
+            "properties" : {
+              "subDistricts" : {
+                "type" : "array",
+                "items" : {
+                  "properties" : {
+                    "code" : {
+                      "type" : "string"
+                    },
+                    "name" : {
+                      "type" : "string"
+                    },
+                    "postCode" : {
+                      "type" : "string"
+                    }
+                  }
+                },
+                "example" : [ {
+                  "code" : "100101",
+                  "name" : "พระบรมมหาราชวัง",
+                  "postCode" : "10200"
+                }, {
+                  "code" : "100102",
+                  "name" : "วังบูรพาภิรมย์",
+                  "postCode" : "10200"
+                }, {
+                  "code" : "100103",
+                  "name" : "วัดราชบพิธ",
+                  "postCode" : "10200"
+                }, {
+                  "code" : "100104",
+                  "name" : "สำราญราษฎร์",
+                  "postCode" : "10200"
+                }, {
+                  "code" : "100105",
+                  "name" : "ศาลเจ้าพ่อเสือ",
+                  "postCode" : "10200"
+                } ]
+              }
+            }
           }
         }
       }
