@@ -28,6 +28,9 @@
   }, {
     "name" : "Master data",
     "description" : "Master data"
+  }, {
+    "name" : "Authentication",
+    "description" : "Authentication"
   } ],
   "paths" : {
     "/update-doctor-info" : {
@@ -611,6 +614,86 @@
             "application/json" : {
               "schema" : {
                 "$ref" : "#/components/schemas/inquiry-subdistrict-body"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/biometric" : {
+      "post" : {
+        "tags" : [ "Authentication" ],
+        "summary" : "enable,disable biometric",
+        "description" : "enable,disable biometric",
+        "parameters" : [ {
+          "name" : "api-key",
+          "in" : "header",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "xxxxxxxxxxxx"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/biometric-response"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/biometric-body"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/verify-biometric" : {
+      "post" : {
+        "tags" : [ "Authentication" ],
+        "summary" : "verify biometric",
+        "description" : "verify biometric",
+        "parameters" : [ {
+          "name" : "api-key",
+          "in" : "header",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "xxxxxxxxxxxx"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/verify-biometric-response"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/verify-biometric-body"
               }
             }
           }
@@ -2136,6 +2219,244 @@
                   "name" : "ศาลเจ้าพ่อเสือ",
                   "postCode" : "10200"
                 } ]
+              }
+            }
+          }
+        }
+      },
+      "biometric-body" : {
+        "type" : "object",
+        "properties" : {
+          "headerReq" : {
+            "type" : "object",
+            "properties" : {
+              "reqId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqChannel" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqDtm" : {
+                "type" : "string",
+                "example" : null
+              },
+              "service" : {
+                "type" : "string",
+                "example" : null
+              },
+              "ipAddress" : {
+                "type" : "string",
+                "example" : null
+              },
+              "appVersion" : {
+                "type" : "string",
+                "example" : null
+              },
+              "clientOs" : {
+                "type" : "string",
+                "example" : null
+              },
+              "txnRefId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "appId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "uuid" : {
+                "type" : "string",
+                "example" : null
+              },
+              "apiKey" : {
+                "type" : "string",
+                "example" : null
+              }
+            }
+          },
+          "content" : {
+            "type" : "object",
+            "properties" : {
+              "isEnablebiometric" : {
+                "type" : "boolean",
+                "example" : true
+              },
+              "deviceId" : {
+                "type" : "string",
+                "example" : "fef124124214"
+              }
+            }
+          }
+        }
+      },
+      "biometric-response" : {
+        "type" : "object",
+        "properties" : {
+          "headerResp" : {
+            "type" : "object",
+            "properties" : {
+              "reqId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqDtm" : {
+                "type" : "string",
+                "example" : null
+              },
+              "service" : {
+                "type" : "string",
+                "example" : null
+              },
+              "txnRefId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "errorDisplay" : {
+                "type" : "object"
+              },
+              "appVersion" : {
+                "type" : "string",
+                "example" : null
+              },
+              "clientOs" : {
+                "type" : "string",
+                "example" : null
+              }
+            }
+          },
+          "content" : {
+            "type" : "object",
+            "properties" : {
+              "uuid" : {
+                "type" : "string",
+                "example" : "e6c83f28-fa4f-42f4-850d-234686561ec4"
+              }
+            }
+          }
+        }
+      },
+      "verify-biometric-body" : {
+        "type" : "object",
+        "properties" : {
+          "headerReq" : {
+            "type" : "object",
+            "properties" : {
+              "reqId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqChannel" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqDtm" : {
+                "type" : "string",
+                "example" : null
+              },
+              "service" : {
+                "type" : "string",
+                "example" : null
+              },
+              "ipAddress" : {
+                "type" : "string",
+                "example" : null
+              },
+              "appVersion" : {
+                "type" : "string",
+                "example" : null
+              },
+              "clientOs" : {
+                "type" : "string",
+                "example" : null
+              },
+              "txnRefId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "appId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "uuid" : {
+                "type" : "string",
+                "example" : null
+              },
+              "apiKey" : {
+                "type" : "string",
+                "example" : null
+              }
+            }
+          },
+          "content" : {
+            "type" : "object",
+            "properties" : {
+              "uuid" : {
+                "type" : "string",
+                "example" : "e6c83f28-fa4f-42f4-850d-234686561ec4"
+              },
+              "deviceId" : {
+                "type" : "string",
+                "example" : "fef124124214"
+              }
+            }
+          }
+        }
+      },
+      "verify-biometric-response" : {
+        "type" : "object",
+        "properties" : {
+          "headerResp" : {
+            "type" : "object",
+            "properties" : {
+              "reqId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqDtm" : {
+                "type" : "string",
+                "example" : null
+              },
+              "service" : {
+                "type" : "string",
+                "example" : null
+              },
+              "txnRefId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "errorDisplay" : {
+                "type" : "object"
+              },
+              "appVersion" : {
+                "type" : "string",
+                "example" : null
+              },
+              "clientOs" : {
+                "type" : "string",
+                "example" : null
+              }
+            }
+          },
+          "content" : {
+            "type" : "object",
+            "properties" : {
+              "accessToken" : {
+                "type" : "string",
+                "example" : "xx508xx63817x752xx74004x30705xx92x58349x5x78f5xx34xxxxx51"
+              },
+              "createdAt" : {
+                "type" : "string",
+                "example" : "2015-11-11T03:36:18.714Z"
+              },
+              "expiresIn" : {
+                "type" : "integer",
+                "example" : 1800
+              },
+              "refreshToken" : {
+                "type" : "string",
+                "example" : "628x9x0xx447xx4x421x517x4x474x33x2065x4x1xx523xxxxx6x7x20"
               }
             }
           }
