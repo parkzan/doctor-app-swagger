@@ -505,15 +505,6 @@
         "tags" : [ "Master data" ],
         "summary" : "inquiry province list",
         "description" : "inquiry province list",
-        "parameters" : [ {
-          "name" : "api-key",
-          "in" : "header",
-          "required" : true,
-          "schema" : {
-            "type" : "string",
-            "example" : "xxxxxxxxxxxx"
-          }
-        } ],
         "responses" : {
           "200" : {
             "description" : "success",
@@ -545,15 +536,6 @@
         "tags" : [ "Master data" ],
         "summary" : "inquiry district list",
         "description" : "inquiry district list",
-        "parameters" : [ {
-          "name" : "api-key",
-          "in" : "header",
-          "required" : true,
-          "schema" : {
-            "type" : "string",
-            "example" : "xxxxxxxxxxxx"
-          }
-        } ],
         "responses" : {
           "200" : {
             "description" : "success",
@@ -585,15 +567,6 @@
         "tags" : [ "Master data" ],
         "summary" : "inquiry sub district list",
         "description" : "inquiry sub district list",
-        "parameters" : [ {
-          "name" : "api-key",
-          "in" : "header",
-          "required" : true,
-          "schema" : {
-            "type" : "string",
-            "example" : "xxxxxxxxxxxx"
-          }
-        } ],
         "responses" : {
           "200" : {
             "description" : "success",
@@ -625,15 +598,6 @@
         "tags" : [ "Authentication" ],
         "summary" : "enable,disable biometric",
         "description" : "enable,disable biometric",
-        "parameters" : [ {
-          "name" : "api-key",
-          "in" : "header",
-          "required" : true,
-          "schema" : {
-            "type" : "string",
-            "example" : "xxxxxxxxxxxx"
-          }
-        } ],
         "responses" : {
           "200" : {
             "description" : "success",
@@ -665,15 +629,6 @@
         "tags" : [ "Authentication" ],
         "summary" : "verify biometric",
         "description" : "verify biometric",
-        "parameters" : [ {
-          "name" : "api-key",
-          "in" : "header",
-          "required" : true,
-          "schema" : {
-            "type" : "string",
-            "example" : "xxxxxxxxxxxx"
-          }
-        } ],
         "responses" : {
           "200" : {
             "description" : "success",
