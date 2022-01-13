@@ -2234,7 +2234,7 @@
           "content" : {
             "type" : "object",
             "properties" : {
-              "isEnablebiometric" : {
+              "isEnableBiometric" : {
                 "type" : "boolean",
                 "example" : true
               },
