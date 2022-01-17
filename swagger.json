@@ -1503,12 +1503,12 @@
               "mobileNo" : {
                 "type" : "string",
                 "description" : "เบอร์โทรติดต่อ",
-                "example" : 9.12487392E8
+                "example" : "0912487392"
               },
               "mobileOtp" : {
                 "type" : "string",
                 "description" : "เบอร์โทรที่ใช้รับ OTP",
-                "example" : 9.12487392E8
+                "example" : "0912487392"
               },
               "email" : {
                 "type" : "string",
