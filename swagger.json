@@ -509,7 +509,7 @@
           "200" : {
             "description" : "success",
             "content" : {
-              "application/json; charset=utf-8" : {
+              "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/inquiry-province-response"
                 }
