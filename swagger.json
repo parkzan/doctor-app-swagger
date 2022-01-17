@@ -509,7 +509,7 @@
           "200" : {
             "description" : "success",
             "content" : {
-              "application/json" : {
+              "application/json; charset=utf-8" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/inquiry-province-response"
                 }
@@ -540,7 +540,7 @@
           "200" : {
             "description" : "success",
             "content" : {
-              "application/json" : {
+              "application/json; charset=utf-8" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/inquiry-district-response"
                 }
@@ -571,7 +571,7 @@
           "200" : {
             "description" : "success",
             "content" : {
-              "application/json" : {
+              "application/json; charset=utf-8" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/inquiry-subdistrict-response"
                 }
