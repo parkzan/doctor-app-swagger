@@ -1466,15 +1466,27 @@
                     "description" : "ถนน",
                     "example" : null
                   },
+                  "subDistrictCode" : {
+                    "type" : "string",
+                    "example" : 1
+                  },
                   "subDistrict" : {
                     "type" : "string",
                     "description" : "ตำบล",
                     "example" : "เมือง"
                   },
+                  "districtCode" : {
+                    "type" : "string",
+                    "example" : 1
+                  },
                   "district" : {
                     "type" : "string",
                     "description" : "อำเภอ",
                     "example" : "เมือง"
+                  },
+                  "provinceCode" : {
+                    "type" : "string",
+                    "example" : 1
                   },
                   "province" : {
                     "type" : "string",
