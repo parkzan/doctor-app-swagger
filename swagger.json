@@ -2249,10 +2249,6 @@
               "isEnableBiometric" : {
                 "type" : "boolean",
                 "example" : true
-              },
-              "deviceId" : {
-                "type" : "string",
-                "example" : "fef124124214"
               }
             }
           }
@@ -2296,7 +2292,7 @@
           "content" : {
             "type" : "object",
             "properties" : {
-              "uuid" : {
+              "key" : {
                 "type" : "string",
                 "example" : "e6c83f28-fa4f-42f4-850d-234686561ec4"
               }
@@ -2359,13 +2355,9 @@
           "content" : {
             "type" : "object",
             "properties" : {
-              "uuid" : {
+              "key" : {
                 "type" : "string",
                 "example" : "e6c83f28-fa4f-42f4-850d-234686561ec4"
-              },
-              "deviceId" : {
-                "type" : "string",
-                "example" : "fef124124214"
               }
             }
           }
