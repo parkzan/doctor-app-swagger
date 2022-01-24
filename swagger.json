@@ -654,6 +654,99 @@
           }
         }
       }
+    },
+    "/setting" : {
+      "post" : {
+        "tags" : [ "Authentication" ],
+        "summary" : "setting",
+        "description" : "setting",
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/setting-response"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/setting-body"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pincode" : {
+      "post" : {
+        "tags" : [ "Authentication" ],
+        "summary" : "set pincode",
+        "description" : "set pincode",
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/pincode-response"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/pincode-body"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/verify-pincode" : {
+      "post" : {
+        "tags" : [ "Authentication" ],
+        "summary" : "verify pincode",
+        "description" : "verify pincode",
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/verify-pincode-response"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/verify-pincode-body"
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components" : {
@@ -2364,6 +2457,337 @@
         }
       },
       "verify-biometric-response" : {
+        "type" : "object",
+        "properties" : {
+          "headerResp" : {
+            "type" : "object",
+            "properties" : {
+              "reqId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqDtm" : {
+                "type" : "string",
+                "example" : null
+              },
+              "service" : {
+                "type" : "string",
+                "example" : null
+              },
+              "txnRefId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "errorDisplay" : {
+                "type" : "object"
+              },
+              "appVersion" : {
+                "type" : "string",
+                "example" : null
+              },
+              "clientOs" : {
+                "type" : "string",
+                "example" : null
+              }
+            }
+          },
+          "content" : {
+            "type" : "object",
+            "properties" : {
+              "accessToken" : {
+                "type" : "string",
+                "example" : "xx508xx63817x752xx74004x30705xx92x58349x5x78f5xx34xxxxx51"
+              },
+              "createdAt" : {
+                "type" : "string",
+                "example" : "2015-11-11T03:36:18.714Z"
+              },
+              "expiresIn" : {
+                "type" : "integer",
+                "example" : 1800
+              },
+              "refreshToken" : {
+                "type" : "string",
+                "example" : "628x9x0xx447xx4x421x517x4x474x33x2065x4x1xx523xxxxx6x7x20"
+              }
+            }
+          }
+        }
+      },
+      "setting-body" : {
+        "type" : "object",
+        "properties" : {
+          "headerReq" : {
+            "type" : "object",
+            "properties" : {
+              "reqId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqChannel" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqDtm" : {
+                "type" : "string",
+                "example" : null
+              },
+              "service" : {
+                "type" : "string",
+                "example" : null
+              },
+              "ipAddress" : {
+                "type" : "string",
+                "example" : null
+              },
+              "appVersion" : {
+                "type" : "string",
+                "example" : null
+              },
+              "clientOs" : {
+                "type" : "string",
+                "example" : null
+              },
+              "txnRefId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "appId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "uuid" : {
+                "type" : "string",
+                "example" : null
+              },
+              "apiKey" : {
+                "type" : "string",
+                "example" : null
+              }
+            }
+          },
+          "content" : {
+            "type" : "object"
+          }
+        }
+      },
+      "setting-response" : {
+        "type" : "object",
+        "properties" : {
+          "headerResp" : {
+            "type" : "object",
+            "properties" : {
+              "reqId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqDtm" : {
+                "type" : "string",
+                "example" : null
+              },
+              "service" : {
+                "type" : "string",
+                "example" : null
+              },
+              "txnRefId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "errorDisplay" : {
+                "type" : "object"
+              },
+              "appVersion" : {
+                "type" : "string",
+                "example" : null
+              },
+              "clientOs" : {
+                "type" : "string",
+                "example" : null
+              }
+            }
+          },
+          "content" : {
+            "type" : "object",
+            "properties" : {
+              "isEnableNotification" : {
+                "type" : "boolean",
+                "example" : true
+              },
+              "isEnableBiometric" : {
+                "type" : "boolean",
+                "example" : true
+              }
+            }
+          }
+        }
+      },
+      "pincode-body" : {
+        "type" : "object",
+        "properties" : {
+          "headerReq" : {
+            "type" : "object",
+            "properties" : {
+              "reqId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqChannel" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqDtm" : {
+                "type" : "string",
+                "example" : null
+              },
+              "service" : {
+                "type" : "string",
+                "example" : null
+              },
+              "ipAddress" : {
+                "type" : "string",
+                "example" : null
+              },
+              "appVersion" : {
+                "type" : "string",
+                "example" : null
+              },
+              "clientOs" : {
+                "type" : "string",
+                "example" : null
+              },
+              "txnRefId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "appId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "uuid" : {
+                "type" : "string",
+                "example" : null
+              },
+              "apiKey" : {
+                "type" : "string",
+                "example" : null
+              }
+            }
+          },
+          "content" : {
+            "type" : "object",
+            "properties" : {
+              "pincode" : {
+                "type" : "string",
+                "example" : 12345
+              }
+            }
+          }
+        }
+      },
+      "pincode-response" : {
+        "type" : "object",
+        "properties" : {
+          "headerResp" : {
+            "type" : "object",
+            "properties" : {
+              "reqId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqDtm" : {
+                "type" : "string",
+                "example" : null
+              },
+              "service" : {
+                "type" : "string",
+                "example" : null
+              },
+              "txnRefId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "errorDisplay" : {
+                "type" : "object"
+              },
+              "appVersion" : {
+                "type" : "string",
+                "example" : null
+              },
+              "clientOs" : {
+                "type" : "string",
+                "example" : null
+              }
+            }
+          },
+          "content" : {
+            "type" : "object"
+          }
+        }
+      },
+      "verify-pincode-body" : {
+        "type" : "object",
+        "properties" : {
+          "headerReq" : {
+            "type" : "object",
+            "properties" : {
+              "reqId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqChannel" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqDtm" : {
+                "type" : "string",
+                "example" : null
+              },
+              "service" : {
+                "type" : "string",
+                "example" : null
+              },
+              "ipAddress" : {
+                "type" : "string",
+                "example" : null
+              },
+              "appVersion" : {
+                "type" : "string",
+                "example" : null
+              },
+              "clientOs" : {
+                "type" : "string",
+                "example" : null
+              },
+              "txnRefId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "appId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "uuid" : {
+                "type" : "string",
+                "example" : null
+              },
+              "apiKey" : {
+                "type" : "string",
+                "example" : null
+              }
+            }
+          },
+          "content" : {
+            "type" : "object",
+            "properties" : {
+              "pincode" : {
+                "type" : "string",
+                "example" : 12345
+              }
+            }
+          }
+        }
+      },
+      "verify-pincode-response" : {
         "type" : "object",
         "properties" : {
           "headerResp" : {
