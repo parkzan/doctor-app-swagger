@@ -747,6 +747,68 @@
           }
         }
       }
+    },
+    "/wallet" : {
+      "post" : {
+        "tags" : [ "Onboard" ],
+        "summary" : "set wallet",
+        "description" : "set wallet",
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/wallet-response"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/wallet-body"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get-wallet" : {
+      "post" : {
+        "tags" : [ "Onboard" ],
+        "summary" : "get wallet",
+        "description" : "get-wallet",
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/get-wallet-response"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/get-wallet-body"
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components" : {
@@ -2840,6 +2902,222 @@
               "refreshToken" : {
                 "type" : "string",
                 "example" : "628x9x0xx447xx4x421x517x4x474x33x2065x4x1xx523xxxxx6x7x20"
+              }
+            }
+          }
+        }
+      },
+      "wallet-body" : {
+        "type" : "object",
+        "properties" : {
+          "headerReq" : {
+            "type" : "object",
+            "properties" : {
+              "reqId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqChannel" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqDtm" : {
+                "type" : "string",
+                "example" : null
+              },
+              "service" : {
+                "type" : "string",
+                "example" : null
+              },
+              "ipAddress" : {
+                "type" : "string",
+                "example" : null
+              },
+              "appVersion" : {
+                "type" : "string",
+                "example" : null
+              },
+              "clientOs" : {
+                "type" : "string",
+                "example" : null
+              },
+              "txnRefId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "appId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "uuid" : {
+                "type" : "string",
+                "example" : null
+              },
+              "apiKey" : {
+                "type" : "string",
+                "example" : null
+              }
+            }
+          },
+          "content" : {
+            "type" : "object",
+            "properties" : {
+              "walletKey" : {
+                "type" : "string",
+                "example" : "ezq2e4df241241424"
+              },
+              "key" : {
+                "type" : "string",
+                "example" : "fsf24214214244124"
+              }
+            }
+          }
+        }
+      },
+      "wallet-response" : {
+        "type" : "object",
+        "properties" : {
+          "headerResp" : {
+            "type" : "object",
+            "properties" : {
+              "reqId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqDtm" : {
+                "type" : "string",
+                "example" : null
+              },
+              "service" : {
+                "type" : "string",
+                "example" : null
+              },
+              "txnRefId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "errorDisplay" : {
+                "type" : "object"
+              },
+              "appVersion" : {
+                "type" : "string",
+                "example" : null
+              },
+              "clientOs" : {
+                "type" : "string",
+                "example" : null
+              }
+            }
+          },
+          "content" : {
+            "type" : "object"
+          }
+        }
+      },
+      "get-wallet-body" : {
+        "type" : "object",
+        "properties" : {
+          "headerReq" : {
+            "type" : "object",
+            "properties" : {
+              "reqId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqChannel" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqDtm" : {
+                "type" : "string",
+                "example" : null
+              },
+              "service" : {
+                "type" : "string",
+                "example" : null
+              },
+              "ipAddress" : {
+                "type" : "string",
+                "example" : null
+              },
+              "appVersion" : {
+                "type" : "string",
+                "example" : null
+              },
+              "clientOs" : {
+                "type" : "string",
+                "example" : null
+              },
+              "txnRefId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "appId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "uuid" : {
+                "type" : "string",
+                "example" : null
+              },
+              "apiKey" : {
+                "type" : "string",
+                "example" : null
+              }
+            }
+          },
+          "content" : {
+            "type" : "object",
+            "properties" : {
+              "key" : {
+                "type" : "string",
+                "example" : "fsf24214214244124"
+              }
+            }
+          }
+        }
+      },
+      "get-wallet-response" : {
+        "type" : "object",
+        "properties" : {
+          "headerResp" : {
+            "type" : "object",
+            "properties" : {
+              "reqId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "reqDtm" : {
+                "type" : "string",
+                "example" : null
+              },
+              "service" : {
+                "type" : "string",
+                "example" : null
+              },
+              "txnRefId" : {
+                "type" : "string",
+                "example" : null
+              },
+              "errorDisplay" : {
+                "type" : "object"
+              },
+              "appVersion" : {
+                "type" : "string",
+                "example" : null
+              },
+              "clientOs" : {
+                "type" : "string",
+                "example" : null
+              }
+            }
+          },
+          "content" : {
+            "type" : "object",
+            "properties" : {
+              "walletKey" : {
+                "type" : "string",
+                "example" : "ezq2e4df241241424"
               }
             }
           }
